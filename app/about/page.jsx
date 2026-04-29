@@ -11,23 +11,34 @@ export default function AboutPage() {
   return (
     <main className="max-w-[1280px] mx-auto overflow-x-hidden">
       {/* Hero Section */}
-      <section className="py-10 md:py-20 px-4 md:px-8">
+      <section className="py-10 md:py-14 px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="text-center md:text-left">
             <span className="text-xs font-semibold tracking-widest uppercase text-[#0090a9] mb-2 block">Our Legacy</span>
             <h1 className="text-3xl md:text-5xl font-bold leading-tight tracking-tight text-black mb-6">
               Pioneering Progress in Information Technology
             </h1>
-            <p className="text-base md:text-lg leading-relaxed text-[#505f76] max-w-xl mx-auto md:mx-0">
+            <p className="text-base md:text-lg leading-relaxed text-[#505f76] w-full mx-auto md:mx-0">
               Since its inception, the Information Technology Institute (ITI) has been a beacon of excellence, fostering technical mastery and academic rigor in the heart of the digital revolution.
             </p>
           </div>
-          <div className="relative h-[300px] md:h-[400px] bg-[#eceef0] overflow-hidden rounded-xl">
-            <Image
-              src="/assets/1a96fcb6b44465692a8bc2aeaebb1aee.png"
-              alt="Modern glass university building"
-              fill
-              className="w-full h-full object-cover"
+          {/* Google Maps Embed */}
+          <div className="relative h-[320px] md:h-[460px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 group">
+            {/* Overlay bar with location badge */}
+            <div className="absolute top-4 left-4 z-10 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow text-sm font-medium text-slate-700 border border-slate-100">
+              <span className="material-symbols-outlined text-cyan-600" style={{ fontSize: '16px' }}>location_on</span>
+              Universal ITI, Amritsar, Punjab
+            </div>
+            <iframe
+              src="https://maps.google.com/maps?q=31.6301752,74.8407467&output=embed&z=17"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Universal ITI Amritsar Location"
+              className="w-full h-full"
             />
           </div>
         </div>

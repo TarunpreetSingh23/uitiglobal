@@ -4,18 +4,22 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 export default function CourseApplyModal({ courseId, courseName, isOpen, onClose }) {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-  });
-  const [status, setStatus] = useState('idle'); // idle, loading, success, error
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
+  const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [errorMessage, setErrorMessage] = useState('');
   const [mounted, setMounted] = useState(false);
 
+  useEffect(() => { setMounted(true); }, []);
+
+  // Lock body scroll when modal is open
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isOpen]);
 
   if (!isOpen || !mounted) return null;
 
@@ -34,133 +38,204 @@ export default function CourseApplyModal({ courseId, courseName, isOpen, onClose
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData, courseId, courseName }),
       });
-
       const data = await res.json();
-
       if (res.ok) {
         setStatus('success');
       } else {
         setStatus('error');
         setErrorMessage(data.message || 'Submission failed. Please try again.');
       }
-    } catch (err) {
+    } catch {
       setStatus('error');
       setErrorMessage('Failed to connect to the server.');
     }
   };
 
+  const handleReset = () => {
+    setStatus('idle');
+    setErrorMessage('');
+    setFormData({ name: '', email: '', phone: '' });
+    onClose();
+  };
+
   const modalContent = (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      <div 
-        className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" 
+    // Outer overlay — inline styles prevent any parent CSS from constraining this
+    <div
+      style={{
+        position: 'fixed',
+        inset: 0,
+        zIndex: 9999,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '16px',
+        overflowY: 'auto',
+      }}
+    >
+      {/* Backdrop */}
+      <div
         onClick={onClose}
+        style={{
+          position: 'fixed',
+          inset: 0,
+          backgroundColor: 'rgba(15,23,42,0.65)',
+          backdropFilter: 'blur(4px)',
+          zIndex: 0,
+        }}
       />
-      
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg relative z-10 overflow-hidden">
+
+      {/* Modal Card */}
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 1,
+          width: '100%',
+          maxWidth: '520px',
+          backgroundColor: '#fff',
+          borderRadius: '20px',
+          boxShadow: '0 25px 60px rgba(0,0,0,0.3)',
+          overflow: 'hidden',
+          margin: 'auto',
+        }}
+      >
         {/* Header */}
-        <div className="bg-cyan-600 px-6 py-5 text-white text-center relative">
-          <button 
+        <div style={{ background: 'linear-gradient(135deg, #0891b2, #0e7490)', padding: '28px 28px 20px', color: 'white', position: 'relative' }}>
+          <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"
+            style={{ position: 'absolute', top: '16px', right: '16px', background: 'rgba(255,255,255,0.15)', border: 'none', borderRadius: '50%', width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', cursor: 'pointer' }}
           >
-            <span className="material-symbols-outlined">close</span>
+            <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>close</span>
           </button>
-          <h2 className="text-2xl font-bold mb-2">Apply for Admission</h2>
-          <p className="text-cyan-100 text-sm">Course: {courseName}</p>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '8px' }}>
+            <div style={{ width: '42px', height: '42px', background: 'rgba(255,255,255,0.2)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span className="material-symbols-outlined" style={{ fontSize: '22px' }}>school</span>
+            </div>
+            <div>
+              <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', opacity: 0.75, marginBottom: '2px' }}>Enroll Now</p>
+              <h2 style={{ fontSize: '20px', fontWeight: 800, margin: 0, lineHeight: 1.2 }}>Apply for Admission</h2>
+            </div>
+          </div>
+
+          <div style={{ marginTop: '12px', background: 'rgba(255,255,255,0.1)', borderRadius: '10px', padding: '10px 14px', fontSize: '13px' }}>
+            <span style={{ opacity: 0.75 }}>Course: </span>
+            <span style={{ fontWeight: 600 }}>{courseName}</span>
+          </div>
         </div>
 
-        {/* Content */}
-        <div className="p-5 md:p-8">
+        {/* Body */}
+        <div style={{ padding: '28px' }}>
           {status === 'success' ? (
-            <div className="text-center py-8">
-              <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="material-symbols-outlined" style={{ fontSize: '32px' }}>check_circle</span>
+            <div style={{ textAlign: 'center', padding: '16px 0' }}>
+              <div style={{ width: '72px', height: '72px', background: '#d1fae5', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
+                <span className="material-symbols-outlined" style={{ fontSize: '40px', color: '#059669' }}>check_circle</span>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">Application Received!</h3>
-              <p className="text-slate-600 mb-8">
-                Thank you, {formData.name}. We will review your application and contact you soon.
+              <h3 style={{ fontSize: '22px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>Application Received!</h3>
+              <p style={{ color: '#64748b', fontSize: '15px', marginBottom: '28px' }}>
+                Thank you, <strong>{formData.name}</strong>. We'll review your application and reach out to you shortly.
               </p>
-              <button 
-                onClick={onClose}
-                className="bg-slate-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-slate-800 transition-colors w-full"
+              <button
+                onClick={handleReset}
+                style={{ width: '100%', padding: '14px', background: '#0891b2', color: 'white', border: 'none', borderRadius: '12px', fontWeight: 700, fontSize: '15px', cursor: 'pointer' }}
               >
                 Close
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit}>
               {status === 'error' && (
-                <div className="bg-red-50 text-red-600 p-3 rounded-lg text-sm flex items-center gap-2">
-                  <span className="material-symbols-outlined text-sm">error</span>
+                <div style={{ background: '#fef2f2', border: '1px solid #fecaca', borderRadius: '10px', padding: '12px 16px', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '8px', color: '#dc2626', fontSize: '14px' }}>
+                  <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>error</span>
                   {errorMessage}
                 </div>
               )}
-              
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+
+              {/* Full Name */}
+              <div style={{ marginBottom: '18px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#374151', marginBottom: '6px' }}>Full Name *</label>
                 <input
                   type="text"
-                  id="name"
                   name="name"
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 text-slate-900 focus:bg-white focus:ring-2 focus:ring-cyan-500 outline-none transition-all"
-                  placeholder="John Doe"
+                  placeholder="e.g. Rahul Sharma"
+                  style={{ width: '100%', padding: '12px 16px', border: '1.5px solid #e2e8f0', borderRadius: '10px', background: '#f8fafc', fontSize: '15px', color: '#0f172a', outline: 'none', boxSizing: 'border-box', transition: 'border-color 0.2s' }}
+                  onFocus={(e) => e.target.style.borderColor = '#0891b2'}
+                  onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
                 />
               </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+              {/* Email */}
+              <div style={{ marginBottom: '18px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#374151', marginBottom: '6px' }}>Email Address *</label>
                 <input
                   type="email"
-                  id="email"
                   name="email"
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 text-slate-900 focus:bg-white focus:ring-2 focus:ring-cyan-500 outline-none transition-all"
-                  placeholder="john@example.com"
+                  placeholder="you@example.com"
+                  style={{ width: '100%', padding: '12px 16px', border: '1.5px solid #e2e8f0', borderRadius: '10px', background: '#f8fafc', fontSize: '15px', color: '#0f172a', outline: 'none', boxSizing: 'border-box', transition: 'border-color 0.2s' }}
+                  onFocus={(e) => e.target.style.borderColor = '#0891b2'}
+                  onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
                 />
               </div>
 
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
+              {/* Phone */}
+              <div style={{ marginBottom: '28px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#374151', marginBottom: '6px' }}>Phone Number *</label>
                 <input
                   type="tel"
-                  id="phone"
                   name="phone"
                   required
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 text-slate-900 focus:bg-white focus:ring-2 focus:ring-cyan-500 outline-none transition-all"
                   placeholder="+91 98765 43210"
+                  style={{ width: '100%', padding: '12px 16px', border: '1.5px solid #e2e8f0', borderRadius: '10px', background: '#f8fafc', fontSize: '15px', color: '#0f172a', outline: 'none', boxSizing: 'border-box', transition: 'border-color 0.2s' }}
+                  onFocus={(e) => e.target.style.borderColor = '#0891b2'}
+                  onBlur={(e) => e.target.style.borderColor = '#e2e8f0'}
                 />
               </div>
 
-              <div className="pt-4">
-                <button
-                  type="submit"
-                  disabled={status === 'loading'}
-                  className={`w-full py-4 rounded-lg font-bold text-white shadow-lg transition-all flex items-center justify-center gap-2 ${
-                    status === 'loading' 
-                      ? 'bg-cyan-400 cursor-not-allowed' 
-                      : 'bg-cyan-600 hover:bg-cyan-500 hover:shadow-cyan-500/30'
-                  }`}
-                >
-                  {status === 'loading' ? (
-                    <>
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Submitting...
-                    </>
-                  ) : (
-                    'Submit Application'
-                  )}
-                </button>
-              </div>
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                style={{
+                  width: '100%',
+                  padding: '15px',
+                  background: status === 'loading' ? '#67e8f9' : '#0891b2',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '12px',
+                  fontWeight: 700,
+                  fontSize: '16px',
+                  cursor: status === 'loading' ? 'not-allowed' : 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
+                }}
+              >
+                {status === 'loading' ? (
+                  <>
+                    <svg style={{ animation: 'spin 1s linear infinite', width: '20px', height: '20px' }} fill="none" viewBox="0 0 24 24">
+                      <circle style={{ opacity: 0.25 }} cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path style={{ opacity: 0.75 }} fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                    </svg>
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    Submit Application
+                    <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>send</span>
+                  </>
+                )}
+              </button>
+
+              <p style={{ textAlign: 'center', fontSize: '12px', color: '#94a3b8', marginTop: '12px' }}>
+                Your information is kept confidential and secure.
+              </p>
             </form>
           )}
         </div>

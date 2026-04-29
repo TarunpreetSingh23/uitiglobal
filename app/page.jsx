@@ -5,6 +5,7 @@ import Course from '@/models/Course';
 import CourseCard from './components/CourseCard';
 import HeroCarousel from './components/HeroCarousel';
 import PartnersSection from './components/PartnersSection';
+import NewsletterSection from './components/NewsletterSection';
 
 export const metadata = {
   title: 'ITI Global — Advancing the Future of IT',
@@ -157,27 +158,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── Newsletter CTA ── */}
-      <section className="bg-[#131b2e] py-16">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-white md:max-w-xl text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">Ready to shape<br className="hidden sm:block" /> your future?</h2>
-            <p className="text-base opacity-70 leading-relaxed">
-              Join our newsletter to receive information about upcoming intake dates, scholarship opportunities, and tech insights.
-            </p>
-          </div>
-          <div className="w-full md:w-auto flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="bg-white/10 border border-white/20 text-white placeholder:text-white/40 px-4 py-3 rounded-lg focus:ring-2 focus:ring-cyan-500 outline-none w-full sm:w-80 transition-all duration-200"
-            />
-            <button className="bg-cyan-600 text-white px-7 py-3 font-semibold rounded-lg hover:bg-cyan-500 active:scale-95 transition-all duration-200 whitespace-nowrap shadow-lg hover:shadow-cyan-900/40">
-              Sign Up Free
-            </button>
-          </div>
-        </div>
-      </section>
+      <NewsletterSection />
     </main>
   );
 }

@@ -12,7 +12,7 @@ const slides = [
     cta: { label: 'Explore Programs', href: '/courses' },
     cta2: { label: 'Virtual Tour', href: '/about' },
     image: '/assets/f75c2308de23c422c26dc222cf22584e.png',
-    stat: { value: '98%', label: 'Graduate Employment Rate' },
+    stat: { value: '100+', label: 'Students Enrolled' },
     accent: 'from-cyan-600/20 to-blue-600/10',
   },
   {
@@ -22,19 +22,19 @@ const slides = [
     cta: { label: 'View ML Programs', href: '/courses' },
     cta2: { label: 'Learn More', href: '/about' },
     image: '/assets/940e06dfe14e8611b57bf89a101b66d6.png',
-    stat: { value: '45K+', label: 'Alumni Worldwide' },
+    stat: { value: '200+', label: 'Students Enrolled' },
     accent: 'from-violet-600/20 to-purple-600/10',
   },
-  {
-    badge: 'CYBERSECURITY TRACK',
-    title: 'Defend the\nDigital World',
-    subtitle: 'Protect global infrastructure through advanced penetration testing, threat intelligence, and modern encryption protocols.',
-    cta: { label: 'Explore Security', href: '/courses' },
-    cta2: { label: 'Meet Instructors', href: '/about' },
-    image: '/assets/6d145504b16d2284f5092f5b84e31a4a.png',
-    stat: { value: '500+', label: 'Industry Partners' },
-    accent: 'from-emerald-600/20 to-teal-600/10',
-  },
+  // {
+  //   badge: 'CYBERSECURITY TRACK',
+  //   title: 'Defend the\nDigital World',
+  //   subtitle: 'Protect global infrastructure through advanced penetration testing, threat intelligence, and modern encryption protocols.',
+  //   cta: { label: 'Explore Security', href: '/courses' },
+  //   cta2: { label: 'Meet Instructors', href: '/about' },
+  //   image: '/assets/6d145504b16d2284f5092f5b84e31a4a.png',
+  //   stat: { value: '500+', label: 'Industry Partners' },
+  //   accent: 'from-emerald-600/20 to-teal-600/10',
+  // },
 ];
 
 export default function HeroCarousel() {
@@ -122,12 +122,12 @@ export default function HeroCarousel() {
             {slide.cta.label}
             <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </Link>
-          <Link
+          {/* <Link
             href={slide.cta2.href}
             className="px-7 py-3.5 border-2 border-slate-100 text-slate-600 text-center font-bold rounded-xl hover:bg-slate-50 hover:border-slate-200 transition-all duration-300"
           >
             {slide.cta2.label}
-          </Link>
+          </Link> */}
         </div>
 
         {/* Quick Stats - Tightened for Mobile */}
@@ -142,13 +142,13 @@ export default function HeroCarousel() {
           </div>
           <div className="hidden lg:block w-px h-8 bg-slate-100" />
           <div>
-            <p className="text-xl lg:text-2xl font-bold text-slate-900">30+</p>
-            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter lg:tracking-widest">Years Exp.</p>
+            <p className="text-xl lg:text-2xl font-bold text-slate-900">7+</p>
+            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter lg:tracking-widest">Courses</p>
           </div>
           <div className="hidden lg:block w-px h-8 bg-slate-100" />
           <div>
-            <p className="text-xl lg:text-2xl font-bold text-slate-900">Global</p>
-            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter lg:tracking-widest">Alumni</p>
+            <p className="text-xl lg:text-2xl font-bold text-slate-900">15+</p>
+            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter lg:tracking-widest">Advanced Modules</p>
           </div>
         </div>
       </div>

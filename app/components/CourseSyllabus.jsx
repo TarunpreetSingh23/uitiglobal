@@ -31,7 +31,7 @@ export default function CourseSyllabus({ modules }) {
             >
               <div className="flex-1 pr-4">
                 <span className="text-cyan-600 font-bold text-xs uppercase mb-1 block tracking-wider">Module {mod.number || index + 1}</span>
-                <h3 className={`text-xl font-semibold transition-colors ${isOpen ? 'text-cyan-900' : 'text-slate-900'}`}>
+                <h3 className={`text-lg md:text-xl font-semibold transition-colors ${isOpen ? 'text-cyan-900' : 'text-slate-900'}`}>
                   {mod.title}
                 </h3>
               </div>

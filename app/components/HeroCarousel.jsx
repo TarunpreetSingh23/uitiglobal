@@ -132,7 +132,7 @@ export default function HeroCarousel() {
             {/* Quick Stats */}
             <div
               key={`stats-${current}`}
-              className="flex items-center gap-8 lg:gap-12 pt-8 border-t border-slate-100 animate-fade-in-up"
+              className="flex flex-wrap items-center gap-4 sm:gap-8 lg:gap-12 pt-8 border-t border-slate-100 animate-fade-in-up"
               style={{ animationDelay: '400ms' }}
             >
               <div>
@@ -181,10 +181,10 @@ export default function HeroCarousel() {
               </div>
 
               {/* Float Badge */}
-              <div className="absolute -bottom-6 -right-4 bg-white p-4 lg:p-6 rounded-2xl shadow-2xl border border-slate-50 animate-float">
+              {/* <div className="absolute -bottom-6 right-4 md:-right-4 bg-white p-4 lg:p-6 rounded-2xl shadow-2xl border border-slate-50 animate-float">
                 <p className="text-2xl lg:text-3xl font-black text-cyan-600">{slide.stat.value}</p>
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">{slide.stat.label}</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

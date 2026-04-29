@@ -99,7 +99,7 @@ export default function Navbar() {
           {/* CTA Button */}
           <Link
             href="/courses"
-            className="bg-cyan-600 text-white text-sm font-semibold px-5 py-2 rounded-lg hover:bg-cyan-500 active:scale-95 transition-all duration-200 shadow-sm hover:shadow-cyan-200 hover:shadow-md"
+            className="hidden sm:flex bg-cyan-600 text-white text-sm font-semibold px-5 py-2 rounded-lg hover:bg-cyan-500 active:scale-95 transition-all duration-200 shadow-sm hover:shadow-cyan-200 hover:shadow-md"
           >
             Apply Now
           </Link>
@@ -141,6 +141,13 @@ export default function Navbar() {
               </Link>
             );
           })}
+          <Link
+            href="/courses"
+            onClick={() => setMenuOpen(false)}
+            className="block sm:hidden mt-2 px-4 py-3 text-center rounded-lg text-sm font-bold bg-cyan-600 text-white hover:bg-cyan-500 shadow-sm"
+          >
+            Apply Now
+          </Link>
         </div>
       </div>
     </header>

@@ -30,7 +30,7 @@ export default async function CourseDetailPage({ params }) {
   if (!course) notFound();
 
   return (
-    <main className="max-w-7xl mx-auto px-8 py-20">
+    <main className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20">
       {/* Hero Section */}
       <section className="mb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -39,7 +39,7 @@ export default async function CourseDetailPage({ params }) {
               <span className="bg-[#d0e1fb] text-[#54647a] px-3 py-1 text-xs font-semibold tracking-widest uppercase rounded-full">{course.category}</span>
               <span className="bg-[#e6e8ea] text-[#45464d] px-3 py-1 text-xs font-semibold tracking-widest uppercase rounded-full">{course.duration}</span>
             </div>
-            <h1 className="text-5xl font-bold leading-tight tracking-tight text-black mb-6">{course.title}</h1>
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight tracking-tight text-black mb-6">{course.title}</h1>
             <p className="text-lg leading-relaxed text-[#505f76] max-w-2xl mb-8">{course.description}</p>
             <div className="flex flex-wrap gap-4">
               <ApplyButton 
@@ -76,7 +76,7 @@ export default async function CourseDetailPage({ params }) {
           {/* Syllabus */}
           <section>
             <div className="flex items-center justify-between mb-8 border-b border-slate-100 pb-4">
-              <h2 className="text-3xl font-semibold">Syllabus</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold">Syllabus</h2>
               <span className="text-cyan-600 text-xs font-semibold tracking-widest uppercase">{course.modules?.length || 0} MODULES</span>
             </div>
             <CourseSyllabus modules={course.modules} />
@@ -84,7 +84,7 @@ export default async function CourseDetailPage({ params }) {
 
           {/* Instructor */}
           {course.instructor && (
-            <section className="bg-[#f2f4f6] rounded-xl p-12 border border-slate-100">
+            <section className="bg-[#f2f4f6] rounded-xl p-6 md:p-12 border border-slate-100">
               <h2 className="text-3xl font-semibold mb-8">Lead Instructor</h2>
               <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
                 <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-sm flex-shrink-0 relative">
@@ -106,7 +106,7 @@ export default async function CourseDetailPage({ params }) {
 
           {/* Prerequisites */}
           <section>
-            <h2 className="text-3xl font-semibold mb-6">Prerequisites</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-6">Prerequisites</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-start p-4 bg-white border border-slate-100 rounded-lg">
                 <span className="material-symbols-outlined text-cyan-600 mr-4">code</span>
@@ -127,7 +127,7 @@ export default async function CourseDetailPage({ params }) {
         </div>
 
         {/* Sidebar */}
-        <aside className="lg:col-span-4 space-y-6">
+        <aside className="lg:col-span-4 space-y-6 order-first lg:order-last">
           {/* Quick Info Card */}
           <div className="bg-white border border-slate-100 rounded-xl overflow-hidden sticky top-24">
             <div className="bg-[#131b2e] p-6">
@@ -163,7 +163,7 @@ export default async function CourseDetailPage({ params }) {
           </div>
 
           {/* Tech Stack */}
-          {course.tags?.length > 0 && (
+          {/* {course.tags?.length > 0 && (
             <div className="bg-white border border-slate-100 rounded-xl p-6">
               <h4 className="text-xs font-semibold tracking-widest uppercase text-[#505f76] mb-4">TECHNOLOGIES TAUGHT</h4>
               <div className="flex flex-wrap gap-2">
@@ -172,10 +172,10 @@ export default async function CourseDetailPage({ params }) {
                 ))}
               </div>
             </div>
-          )}
+          )} */}
 
           {/* Code Teaser */}
-          <div className="rounded-xl overflow-hidden bg-slate-900 shadow-xl border border-slate-800">
+          {/* <div className="rounded-xl overflow-hidden bg-slate-900 shadow-xl border border-slate-800">
             <div className="bg-gradient-to-r from-slate-800 to-slate-900 px-4 py-2 flex items-center space-x-2">
               <div className="w-2.5 h-2.5 rounded-full bg-red-500" />
               <div className="w-2.5 h-2.5 rounded-full bg-amber-500" />
@@ -185,7 +185,7 @@ export default async function CourseDetailPage({ params }) {
             <div className="p-4 font-mono text-sm overflow-x-auto">
               <pre className="text-slate-300"><code><span className="text-cyan-400">const</span> express = require(<span className="text-amber-300">&apos;express&apos;</span>);{'\n'}<span className="text-cyan-400">const</span> app = express();{'\n\n'}app.get(<span className="text-amber-300">&apos;/&apos;</span>, (req, res) =&gt; {'{'}{'\n'}  res.json({'{'} status: <span className="text-amber-300">&apos;online&apos;</span> {'}'});{'\n'}{'}'});{'\n\n'}<span className="text-slate-500">// Join 1000+ developers</span>{'\n'}app.listen(3000);</code></pre>
             </div>
-          </div>
+          </div> */}
         </aside>
       </div>
 

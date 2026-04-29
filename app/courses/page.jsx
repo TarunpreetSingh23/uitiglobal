@@ -34,7 +34,7 @@ export default async function CoursesPage({ searchParams }) {
   const courses = await getCourses(search);
 
   return (
-    <main className="max-w-7xl mx-auto px-8 py-20">
+    <main className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20">
       {/* Hero Section & Filters */}
       <section className="mb-12">
         <h1 className="text-5xl font-bold leading-tight tracking-tight text-black mb-3">Academic Catalog</h1>
@@ -56,14 +56,14 @@ export default async function CoursesPage({ searchParams }) {
               </button>
             ))}
           </div>
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             <span className="text-xs font-semibold tracking-widest uppercase text-[#45464d]">Sort by:</span>
             <select className="bg-transparent border-none text-xs font-semibold tracking-widest uppercase focus:ring-0 cursor-pointer text-black">
               <option>Recommended</option>
               <option>Newest</option>
               <option>Duration</option>
             </select>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -76,19 +76,19 @@ export default async function CoursesPage({ searchParams }) {
             ))}
           </div>
           {/* Pagination */}
-          <div className="mt-20 flex justify-center items-center gap-2">
+          {/* <div className="mt-20 flex justify-center items-center gap-2">
             <button className="p-2 border border-slate-200 rounded-lg text-[#45464d] hover:bg-slate-50 transition-all active:scale-95">
               <span className="material-symbols-outlined">chevron_left</span>
             </button>
             <button className="w-10 h-10 bg-black text-white rounded-lg text-xs font-semibold tracking-widest">1</button>
-            <button className="w-10 h-10 hover:bg-[#f2f4f6] text-[#45464d] rounded-lg text-xs font-semibold transition-colors">2</button>
-            <button className="w-10 h-10 hover:bg-[#f2f4f6] text-[#45464d] rounded-lg text-xs font-semibold transition-colors">3</button>
-            <span className="text-[#45464d] mx-2">...</span>
+            <button className="w-10 h-10 hover:bg-[#f2f4f6] text-[#45464d] rounded-lg text-xs font-semibold transition-colors hidden sm:block">2</button>
+            <button className="w-10 h-10 hover:bg-[#f2f4f6] text-[#45464d] rounded-lg text-xs font-semibold transition-colors hidden sm:block">3</button>
+            <span className="text-[#45464d] mx-2 hidden sm:block">...</span>
             <button className="w-10 h-10 hover:bg-[#f2f4f6] text-[#45464d] rounded-lg text-xs font-semibold transition-colors">12</button>
             <button className="p-2 border border-slate-200 rounded-lg text-[#45464d] hover:bg-slate-50 transition-all active:scale-95">
               <span className="material-symbols-outlined">chevron_right</span>
             </button>
-          </div>
+          </div> */}
         </>
       ) : (
         <div className="text-center py-24 text-[#45464d]">

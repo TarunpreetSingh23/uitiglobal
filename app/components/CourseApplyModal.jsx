@@ -58,7 +58,7 @@ export default function CourseApplyModal({ courseId, courseName, isOpen, onClose
       
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg relative z-10 overflow-hidden">
         {/* Header */}
-        <div className="bg-cyan-600 p-6 text-white text-center relative">
+        <div className="bg-cyan-600 px-6 py-5 text-white text-center relative">
           <button 
             onClick={onClose}
             className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"
@@ -70,7 +70,7 @@ export default function CourseApplyModal({ courseId, courseName, isOpen, onClose
         </div>
 
         {/* Content */}
-        <div className="p-8">
+        <div className="p-5 md:p-8">
           {status === 'success' ? (
             <div className="text-center py-8">
               <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">

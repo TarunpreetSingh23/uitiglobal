@@ -40,9 +40,9 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* Main copy */}
-            <div className="md:col-span-8 bg-white border border-slate-200 p-12 flex flex-col justify-center rounded-xl hover:shadow-md transition-shadow duration-300">
+            <div className="md:col-span-8 bg-white border border-slate-200 p-8 md:p-12 flex flex-col justify-center rounded-xl hover:shadow-md transition-shadow duration-300">
               <span className="text-xs font-semibold tracking-widest uppercase text-cyan-600 mb-3">About ITI</span>
-              <h2 className="text-4xl font-bold leading-tight text-black mb-5">
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight text-black mb-5">
                 A Tradition of Innovation<br />and Academic Excellence
               </h2>
               <p className="text-base text-[#505f76] leading-relaxed">
@@ -73,10 +73,10 @@ export default async function HomePage() {
       {/* ── Featured Courses ── */}
       <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-between items-end mb-12">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-12 gap-4">
             <div>
               <span className="text-xs font-semibold tracking-widest uppercase text-cyan-600 mb-2 block">Curriculum</span>
-              <h2 className="text-4xl font-bold text-black">Featured Programs</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-black">Featured Programs</h2>
               <p className="text-base text-[#505f76] mt-2">Specialized career tracks designed for the modern economy.</p>
             </div>
             <Link
@@ -116,7 +116,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs font-semibold tracking-widest uppercase text-cyan-600 mb-2 block">Why Choose Us</span>
-            <h2 className="text-4xl font-bold text-black">The ITI Advantage</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-black">The ITI Advantage</h2>
             <p className="text-base text-[#505f76] mt-3">We provide more than just education — a complete ecosystem for technical professional growth.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -141,7 +141,7 @@ export default async function HomePage() {
       <section className="bg-cyan-600 py-16">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <span className="material-symbols-outlined text-white/40 text-6xl block mb-4">format_quote</span>
-          <blockquote className="text-white text-2xl font-medium leading-relaxed italic">
+          <blockquote className="text-white text-xl md:text-2xl font-medium leading-relaxed italic">
             "ITI Global transformed my career. Within 6 months of graduating, I landed a senior engineering role at a Fortune 500 company."
           </blockquote>
           <div className="mt-6 flex items-center justify-center gap-3">
@@ -157,8 +157,8 @@ export default async function HomePage() {
       {/* ── Newsletter CTA ── */}
       <section className="bg-[#131b2e] py-16">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-white md:max-w-xl">
-            <h2 className="text-4xl font-bold mb-3 leading-tight">Ready to shape<br className="hidden sm:block" /> your future?</h2>
+          <div className="text-white md:max-w-xl text-center md:text-left">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">Ready to shape<br className="hidden sm:block" /> your future?</h2>
             <p className="text-base opacity-70 leading-relaxed">
               Join our newsletter to receive information about upcoming intake dates, scholarship opportunities, and tech insights.
             </p>

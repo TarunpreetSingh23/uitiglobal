@@ -67,7 +67,7 @@ export default function ContactPage() {
         </div>
         
         <div className="relative max-w-7xl mx-auto px-6 text-center z-10">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
             Get in <span className="text-cyan-400">Touch</span>
           </h1>
           <p className="text-lg md:text-xl text-cyan-50 max-w-2xl mx-auto">
@@ -119,7 +119,7 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-2xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 h-full relative overflow-hidden">
+            <div className="bg-white rounded-2xl p-6 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 h-full relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-cyan-400 to-cyan-500"></div>
               
               <h2 className="text-3xl font-bold text-slate-900 mb-8">Send us a Message</h2>

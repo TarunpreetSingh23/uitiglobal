@@ -50,9 +50,9 @@ export default async function CourseDetailPage({ params }) {
                 Enroll Now
                 <span className="material-symbols-outlined ml-2">arrow_forward</span>
               </ApplyButton>
-              <button className="border border-black text-black px-8 py-4 font-bold text-base rounded-lg hover:bg-[#f2f4f6] transition-all active:scale-95">
+              {/* <button className="border border-black text-black px-8 py-4 font-bold text-base rounded-lg hover:bg-[#f2f4f6] transition-all active:scale-95">
                 Request Info
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="lg:col-span-4 relative">
@@ -87,9 +87,9 @@ export default async function CourseDetailPage({ params }) {
             <section className="bg-[#f2f4f6] rounded-xl p-6 md:p-12 border border-slate-100">
               <h2 className="text-3xl font-semibold mb-8">Lead Instructor</h2>
               <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-sm flex-shrink-0 relative">
+                {/* <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-sm flex-shrink-0 relative">
                   <Image src={course.instructor.imageUrl} alt={course.instructor.name} fill className="object-cover" />
-                </div>
+                </div> */}
                 <div>
                   <h3 className="text-2xl font-semibold mb-1">{course.instructor.name}</h3>
                   <p className="text-cyan-600 font-medium mb-4">{course.instructor.role}</p>

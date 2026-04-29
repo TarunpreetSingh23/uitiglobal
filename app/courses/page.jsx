@@ -8,17 +8,29 @@ export const metadata = {
   description: 'Explore our elite selection of specialized programs designed for the next generation of computing leaders.',
 };
 
-async function getCourses(searchQuery = '') {
+async function getCourses({ searchQuery = '', category = '' }) {
   try {
     await dbConnect();
-    const query = searchQuery 
-      ? { 
-          $or: [
-            { title: { $regex: searchQuery, $options: 'i' } },
-            { description: { $regex: searchQuery, $options: 'i' } }
-          ]
-        }
-      : {};
+
+    // Build conditions array
+    const conditions = [];
+
+    // Text search filter
+    if (searchQuery) {
+      conditions.push({
+        $or: [
+          { title: { $regex: searchQuery, $options: 'i' } },
+          { description: { $regex: searchQuery, $options: 'i' } },
+        ],
+      });
+    }
+
+    // Category filter (skip if "All Courses" or empty)
+    if (category && category !== 'All Courses') {
+      conditions.push({ category: { $regex: category, $options: 'i' } });
+    }
+
+    const query = conditions.length > 0 ? { $and: conditions } : {};
     const courses = await Course.find(query).lean();
     return JSON.parse(JSON.stringify(courses));
   } catch {
@@ -26,76 +38,93 @@ async function getCourses(searchQuery = '') {
   }
 }
 
-const categories = ['All Courses', 'Software Development', 'Data Science', 'Cybersecurity', 'Cloud Computing'];
+const categories = ['All Courses', 'Web Development', 'Data Science', 'AI/ML', 'E-commerce'];
 
 export default async function CoursesPage({ searchParams }) {
   const resolvedSearchParams = await searchParams;
   const search = resolvedSearchParams?.search || '';
-  const courses = await getCourses(search);
+  const activeCategory = resolvedSearchParams?.category || 'All Courses';
+
+  const courses = await getCourses({ searchQuery: search, category: activeCategory });
+
+  // Build a helper to create href with both params preserved
+  const buildHref = (cat) => {
+    const params = new URLSearchParams();
+    if (search) params.set('search', search);
+    if (cat && cat !== 'All Courses') params.set('category', cat);
+    const qs = params.toString();
+    return `/courses${qs ? `?${qs}` : ''}`;
+  };
+
+  const isFiltered = search || activeCategory !== 'All Courses';
 
   return (
-    <main className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20">
+    <main className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-20">
       {/* Hero Section & Filters */}
       <section className="mb-12">
-        <h1 className="text-5xl font-bold leading-tight tracking-tight text-black mb-3">Academic Catalog</h1>
-        <p className="text-lg leading-relaxed text-[#45464d] max-w-2xl mb-12">
-          {search ? `Search results for "${search}"` : 'Explore our elite selection of specialized programs designed for the next generation of computing leaders and technical visionaries.'}
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight text-black mb-3">Academic Catalog</h1>
+        <p className="text-base md:text-lg leading-relaxed text-[#45464d] max-w-2xl mb-8">
+          {search
+            ? `Search results for "${search}"${activeCategory !== 'All Courses' ? ` in ${activeCategory}` : ''}`
+            : activeCategory !== 'All Courses'
+            ? `Showing courses in "${activeCategory}"`
+            : 'Explore our elite selection of specialized programs designed for the next generation of computing leaders.'}
         </p>
-        <div className="flex flex-col md:flex-row md:items-center gap-6 bg-white p-3 rounded-xl border border-slate-100 shadow-sm">
-          <div className="flex-1 flex flex-wrap gap-2">
-            {categories.map((cat, i) => (
-              <button
+
+        {/* Filter Pills */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {categories.map((cat) => {
+            const isActive = cat === activeCategory;
+            return (
+              <Link
                 key={cat}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-widest uppercase transition-colors ${
-                  i === 0
-                    ? 'bg-black text-white'
-                    : 'bg-[#f2f4f6] text-[#45464d] hover:bg-[#e6e8ea]'
+                href={buildHref(cat)}
+                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-200 border ${
+                  isActive
+                    ? 'bg-cyan-600 text-white border-cyan-600 shadow-md shadow-cyan-200'
+                    : 'bg-white text-[#45464d] border-slate-200 hover:border-cyan-400 hover:text-cyan-600'
                 }`}
               >
                 {cat}
-              </button>
-            ))}
-          </div>
-          {/* <div className="flex items-center gap-3">
-            <span className="text-xs font-semibold tracking-widest uppercase text-[#45464d]">Sort by:</span>
-            <select className="bg-transparent border-none text-xs font-semibold tracking-widest uppercase focus:ring-0 cursor-pointer text-black">
-              <option>Recommended</option>
-              <option>Newest</option>
-              <option>Duration</option>
-            </select>
-          </div> */}
+              </Link>
+            );
+          })}
+
+          {/* Clear filters button */}
+          {isFiltered && (
+            <Link
+              href="/courses"
+              className="px-4 py-2 rounded-full text-xs font-semibold tracking-widest uppercase transition-all duration-200 border border-red-200 bg-red-50 text-red-500 hover:bg-red-100 flex items-center gap-1"
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>close</span>
+              Clear
+            </Link>
+          )}
         </div>
+
+        {/* Results count */}
+        <p className="text-sm text-slate-400 font-medium">
+          {courses.length} {courses.length === 1 ? 'course' : 'courses'} found
+        </p>
       </section>
 
       {/* Course Grid */}
       {courses.length > 0 ? (
-        <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {courses.map((course) => (
-              <CourseCard key={course._id} course={course} />
-            ))}
-          </div>
-          {/* Pagination */}
-          {/* <div className="mt-20 flex justify-center items-center gap-2">
-            <button className="p-2 border border-slate-200 rounded-lg text-[#45464d] hover:bg-slate-50 transition-all active:scale-95">
-              <span className="material-symbols-outlined">chevron_left</span>
-            </button>
-            <button className="w-10 h-10 bg-black text-white rounded-lg text-xs font-semibold tracking-widest">1</button>
-            <button className="w-10 h-10 hover:bg-[#f2f4f6] text-[#45464d] rounded-lg text-xs font-semibold transition-colors hidden sm:block">2</button>
-            <button className="w-10 h-10 hover:bg-[#f2f4f6] text-[#45464d] rounded-lg text-xs font-semibold transition-colors hidden sm:block">3</button>
-            <span className="text-[#45464d] mx-2 hidden sm:block">...</span>
-            <button className="w-10 h-10 hover:bg-[#f2f4f6] text-[#45464d] rounded-lg text-xs font-semibold transition-colors">12</button>
-            <button className="p-2 border border-slate-200 rounded-lg text-[#45464d] hover:bg-slate-50 transition-all active:scale-95">
-              <span className="material-symbols-outlined">chevron_right</span>
-            </button>
-          </div> */}
-        </>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {courses.map((course) => (
+            <CourseCard key={course._id} course={course} />
+          ))}
+        </div>
       ) : (
-        <div className="text-center py-24 text-[#45464d]">
-          <span className="material-symbols-outlined text-6xl text-slate-300 block mb-4">school</span>
-          <p className="text-lg font-medium">No courses in the database yet.</p>
-          <p className="text-sm mt-2">
-            <Link href="/api/seed" className="text-cyan-600 underline font-medium">Seed the database</Link> to populate courses, then refresh this page.
+        <div className="text-center py-24 text-[#45464d] bg-slate-50 rounded-2xl border border-slate-100">
+          <span className="material-symbols-outlined text-6xl text-slate-300 block mb-4">search_off</span>
+          <p className="text-lg font-semibold">No courses found.</p>
+          <p className="text-sm mt-2 text-slate-500">
+            Try a different category or{' '}
+            <Link href="/courses" className="text-cyan-600 underline font-medium">
+              view all courses
+            </Link>
+            .
           </p>
         </div>
       )}

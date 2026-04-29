@@ -39,7 +39,7 @@ export default async function HomePage() {
       <PartnersSection />
 
       {/* ── About Bento ── */}
-      <section className="bg-[#f2f4f6] py-24">
+      <section className="bg-[#f2f4f6] py-6">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* Main copy */}
@@ -57,24 +57,24 @@ export default async function HomePage() {
               </Link>
             </div>
             {/* Stat cards */}
-            <div className="md:col-span-4 grid grid-rows-2 gap-6">
-              <div className="bg-cyan-600 p-6 flex flex-col justify-center text-white rounded-xl hover:bg-cyan-500 transition-colors duration-300 cursor-default group">
+            <div className="md:col-span-4 grid grid-rows-1 gap-6">
+              <div className="bg-gray-700 p-6 flex flex-col justify-center text-white rounded-xl hover:bg-cyan-500 transition-colors duration-300 cursor-default group">
                 <span className="material-symbols-outlined mb-3 text-white/80 group-hover:scale-110 transition-transform duration-200">hub</span>
                 <h3 className="text-2xl font-bold mb-1">Industrial Network</h3>
-                <p className="text-sm opacity-90">Connected with 500+ global tech partners.</p>
+                <p className="text-sm opacity-90">Connected with 10+ tech and non-tech partners.</p>
               </div>
-              <div className="bg-[#131b2e] p-6 flex flex-col justify-center text-white rounded-xl hover:bg-[#1a2540] transition-colors duration-300 cursor-default group">
+              {/* <div className="bg-[#131b2e] p-6 flex flex-col justify-center text-white rounded-xl hover:bg-[#1a2540] transition-colors duration-300 cursor-default group">
                 <span className="material-symbols-outlined mb-3 text-white/80 group-hover:scale-110 transition-transform duration-200">school</span>
                 <h3 className="text-2xl font-bold mb-1">Alumni Excellence</h3>
                 <p className="text-sm opacity-90">Join a network of 45,000 tech professionals.</p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
       </section>
 
       {/* ── Featured Courses ── */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-6">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-12 gap-4">
             <div>
@@ -115,7 +115,7 @@ export default async function HomePage() {
       </section>
 
       {/* ── ITI Advantage ── */}
-      <section className="bg-slate-50 py-24">
+      <section className="bg-slate-50 py-6">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs font-semibold tracking-widest uppercase text-cyan-600 mb-2 block">Why Choose Us</span>

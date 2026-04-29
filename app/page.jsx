@@ -4,6 +4,7 @@ import dbConnect from '@/lib/mongodb';
 import Course from '@/models/Course';
 import CourseCard from './components/CourseCard';
 import HeroCarousel from './components/HeroCarousel';
+import PartnersSection from './components/PartnersSection';
 
 export const metadata = {
   title: 'ITI Global — Advancing the Future of IT',
@@ -34,6 +35,8 @@ export default async function HomePage() {
     <main>
       {/* ── Hero Carousel ── */}
       <HeroCarousel />
+
+      <PartnersSection />
 
       {/* ── About Bento ── */}
       <section className="bg-[#f2f4f6] py-24">

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import PartnersSection from '../components/PartnersSection';
 
 export const metadata = {
   title: 'About ITI Global | Advancing the Future of Computing',
@@ -55,6 +56,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <PartnersSection />
 
       {/* History Timeline */}
       <section className="py-20 px-8">

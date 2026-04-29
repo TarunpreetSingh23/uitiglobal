@@ -1,0 +1,413 @@
+---
+---
+
+<html lang="en"><head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<script src="/assets/03ba5d9f9e95fc3599acebcbe7e5fb9a.js" is:inline="" />
+<link href="/assets/7eef186e634a41773ad999097d878595.css" rel="stylesheet" />
+<link href="/assets/a39f5c6fcbb87b419667ec984d2e579a.css" rel="stylesheet" />
+<link href="/assets/a39f5c6fcbb87b419667ec984d2e579a.css" rel="stylesheet" />
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "primary-fixed-dim": "#bec6e0",
+                    "secondary": "#505f76",
+                    "secondary-container": "#d0e1fb",
+                    "primary": "#000000",
+                    "inverse-surface": "#2d3133",
+                    "background": "#f7f9fb",
+                    "surface-variant": "#e0e3e5",
+                    "primary-container": "#131b2e",
+                    "tertiary": "#000000",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface": "#f7f9fb",
+                    "error-container": "#ffdad6",
+                    "on-surface": "#191c1e",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#0090a9",
+                    "on-surface-variant": "#45464d",
+                    "surface-bright": "#f7f9fb",
+                    "outline-variant": "#c6c6cd",
+                    "inverse-primary": "#bec6e0",
+                    "primary-fixed": "#dae2fd",
+                    "tertiary-container": "#001f26",
+                    "surface-dim": "#d8dadc",
+                    "on-secondary-container": "#54647a",
+                    "surface-container-low": "#f2f4f6",
+                    "on-tertiary-fixed-variant": "#004e5c",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-primary-fixed": "#131b2e",
+                    "surface-tint": "#565e74",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-tertiary": "#ffffff",
+                    "inverse-on-surface": "#eff1f3",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "surface-container": "#eceef0",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#191c1e",
+                    "on-primary-container": "#7c839b",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#001f26",
+                    "outline": "#76777d",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "tertiary-fixed-dim": "#4cd7f6",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "tertiary-fixed": "#acedff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xl": "80px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "container-max": "1280px",
+                    "md": "24px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h2": ["Space Grotesk"],
+                    "h1": ["Space Grotesk"],
+                    "body-md": ["Inter"],
+                    "code": ["monospace"],
+                    "label-caps": ["Inter"],
+                    "h3": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h2": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "code": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .code-block-header {
+            background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 docked full-width top-0 sticky z-50 font-['Space_Grotesk'] antialiased">
+<div class="max-w-7xl mx-auto px-8 flex justify-between items-center h-16 w-full">
+<div class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">ITI Global</div>
+<nav class="hidden md:flex items-center space-x-8 h-full">
+<a class="text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors cursor-pointer active:scale-95 duration-200" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors cursor-pointer active:scale-95 duration-200" href="#">About</a>
+<a class="text-cyan-600 dark:text-cyan-400 border-b-2 border-cyan-600 pb-1 cursor-pointer active:scale-95 duration-200" href="#">Courses</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors cursor-pointer active:scale-95 duration-200" href="#">Contact</a>
+</nav>
+<div class="flex items-center space-x-6">
+<div class="hidden lg:flex items-center bg-slate-50 dark:bg-slate-900 px-3 py-1.5 rounded-md border border-slate-200 dark:border-slate-800">
+<span class="material-symbols-outlined text-slate-400 text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-slate-600 w-48" placeholder="Search programs..." type="text" />
+</div>
+<button class="bg-cyan-600 hover:bg-cyan-700 text-white px-5 py-2 text-sm font-medium rounded-md transition-all active:scale-95 duration-200">Apply Now</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-8 py-xl">
+<!-- Hero Section -->
+<section class="mb-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-8">
+<div class="flex items-center space-x-2 mb-4">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 text-label-caps font-label-caps rounded-full uppercase">Development</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 text-label-caps font-label-caps rounded-full uppercase">9 Months</span>
+</div>
+<h1 class="font-h1 text-h1 text-primary mb-6">Full Stack Web Development</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mb-8">
+                        Master the art of building scalable, production-ready web applications from the ground up. This intensive program covers both frontend and backend technologies with industry-leading practices.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-cyan-600 text-white px-8 py-4 font-bold text-body-md rounded-lg flex items-center shadow-sm hover:shadow-md transition-all active:scale-95">
+                            Enroll Now
+                            <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</button>
+<button class="border border-primary text-primary px-8 py-4 font-bold text-body-md rounded-lg hover:bg-surface-container-low transition-all active:scale-95">
+                            Request Info
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-4 relative">
+<div class="aspect-square rounded-xl overflow-hidden shadow-sm border border-slate-100">
+<img alt="Full Stack Development" class="w-full h-full object-cover" data-alt="Modern workspace with a high-end laptop showing clean code, soft ambient lighting, and a minimalist tech-focused atmosphere" src="/assets/6056cd48bb04b46bbdac829476e798ab.png" />
+</div>
+</div>
+</div>
+</section>
+<!-- Course Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Content Area -->
+<div class="lg:col-span-8 space-y-lg">
+<!-- Curriculum Section -->
+<section>
+<div class="flex items-center justify-between mb-8 border-b border-slate-100 pb-4">
+<h2 class="font-h2 text-h2">Syllabus</h2>
+<span class="text-cyan-600 font-label-caps text-label-caps">24 MODULES</span>
+</div>
+<div class="space-y-4">
+<!-- Module 1 -->
+<div class="bg-white border border-slate-100 p-6 rounded-lg group hover:border-cyan-200 transition-colors">
+<div class="flex justify-between items-start cursor-pointer">
+<div>
+<span class="text-cyan-600 font-bold text-xs uppercase mb-1 block">Module 01</span>
+<h3 class="font-h3 text-h3 mb-2">Frontend Foundations &amp; UI/UX</h3>
+<p class="text-secondary text-body-sm max-w-xl">Deep dive into semantic HTML5, CSS Grid/Flexbox, and responsive design principles. Mastering modern layout engines.</p>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-cyan-500 transition-colors">expand_more</span>
+</div>
+</div>
+<!-- Module 2 -->
+<div class="bg-white border border-slate-100 p-6 rounded-lg group hover:border-cyan-200 transition-colors">
+<div class="flex justify-between items-start cursor-pointer">
+<div>
+<span class="text-cyan-600 font-bold text-xs uppercase mb-1 block">Module 02</span>
+<h3 class="font-h3 text-h3 mb-2">JavaScript Deep Dive &amp; ES6+</h3>
+<p class="text-secondary text-body-sm max-w-xl">Asynchronous programming, closures, prototypes, and the modern JavaScript engine. Building robust logic layers.</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">expand_more</span>
+</div>
+</div>
+<!-- Module 3 -->
+<div class="bg-white border border-slate-100 p-6 rounded-lg group hover:border-cyan-200 transition-colors">
+<div class="flex justify-between items-start cursor-pointer">
+<div>
+<span class="text-cyan-600 font-bold text-xs uppercase mb-1 block">Module 03</span>
+<h3 class="font-h3 text-h3 mb-2">React Ecosystem &amp; State Management</h3>
+<p class="text-secondary text-body-sm max-w-xl">Component architecture, hooks, context API, and advanced state management with Redux Toolkit.</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">expand_more</span>
+</div>
+</div>
+<!-- Module 4 - Expanded Concept -->
+<div class="bg-white border-l-4 border-cyan-600 shadow-sm p-6 rounded-r-lg">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="text-cyan-600 font-bold text-xs uppercase mb-1 block">Module 04</span>
+<h3 class="font-h3 text-h3">Backend Architecture &amp; APIs</h3>
+</div>
+<span class="material-symbols-outlined text-cyan-600">expand_less</span>
+</div>
+<ul class="space-y-3">
+<li class="flex items-center text-body-md text-on-surface">
+<span class="material-symbols-outlined text-cyan-500 mr-3 text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    Node.js Event Loop &amp; Performance
+                                </li>
+<li class="flex items-center text-body-md text-on-surface">
+<span class="material-symbols-outlined text-cyan-500 mr-3 text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    Express.js Middleware &amp; Routing
+                                </li>
+<li class="flex items-center text-body-md text-on-surface">
+<span class="material-symbols-outlined text-cyan-500 mr-3 text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    RESTful &amp; GraphQL API Design
+                                </li>
+<li class="flex items-center text-body-md text-on-surface">
+<span class="material-symbols-outlined text-cyan-500 mr-3 text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                    Authentication with JWT and OAuth2
+                                </li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Instructor Section -->
+<section class="bg-surface-container-low rounded-xl p-lg border border-slate-100">
+<h2 class="font-h2 text-h2 mb-8">Lead Instructor</h2>
+<div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+<div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-sm flex-shrink-0">
+<img alt="Dr. Marcus Chen" class="w-full h-full object-cover" data-alt="Professional headshot of a middle-aged male computer science professor with a kind smile, dressed in a smart casual blazer, soft studio lighting" src="/assets/06a4b78655b1455e35a2c6c763c68ca7.png" />
+</div>
+<div>
+<h3 class="font-h3 text-h3 mb-1">Dr. Marcus Chen</h3>
+<p class="text-cyan-600 font-medium mb-4">Senior Software Architect, ex-Google &amp; Microsoft</p>
+<p class="text-secondary text-body-md mb-6 leading-relaxed">
+                                Dr. Chen has over 15 years of experience in distributed systems and cloud infrastructure. He has published numerous papers on web performance and has mentored over 500 developers now working at top-tier tech companies.
+                            </p>
+<div class="flex space-x-4">
+<a class="text-slate-400 hover:text-cyan-600 transition-colors" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="text-slate-400 hover:text-cyan-600 transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+</a>
+<a class="text-slate-400 hover:text-cyan-600 transition-colors" href="#">
+<span class="material-symbols-outlined">description</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Prerequisites Section -->
+<section>
+<h2 class="font-h2 text-h2 mb-6">Prerequisites</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex items-start p-4 bg-white border border-slate-100 rounded-lg">
+<span class="material-symbols-outlined text-cyan-600 mr-4">code</span>
+<div>
+<h4 class="font-bold text-body-md mb-1">Basic Logic</h4>
+<p class="text-secondary text-body-sm">Understanding of basic programming logic and loops.</p>
+</div>
+</div>
+<div class="flex items-start p-4 bg-white border border-slate-100 rounded-lg">
+<span class="material-symbols-outlined text-cyan-600 mr-4">terminal</span>
+<div>
+<h4 class="font-bold text-body-md mb-1">Terminal Usage</h4>
+<p class="text-secondary text-body-sm">Comfortable with command-line basics (git, cd, mkdir).</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar Quick Info -->
+<aside class="lg:col-span-4 space-y-gutter">
+<!-- Quick Info Card -->
+<div class="bg-white border border-slate-100 rounded-xl overflow-hidden sticky top-24">
+<div class="bg-primary-container p-6">
+<h4 class="text-white font-label-caps text-label-caps opacity-70 mb-1">PROGRAM TUITION</h4>
+<div class="flex items-baseline space-x-2">
+<span class="text-white font-h2 text-h2">$12,500</span>
+<span class="text-slate-400 text-body-sm line-through">$15,000</span>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<div>
+<div class="flex items-center text-secondary mb-2">
+<span class="material-symbols-outlined mr-2 text-sm">schedule</span>
+<span class="font-label-caps text-label-caps">DURATION</span>
+</div>
+<p class="font-bold text-on-surface">36 Weeks (Part-time)</p>
+</div>
+<div class="border-t border-slate-50 pt-6">
+<div class="flex items-center text-secondary mb-2">
+<span class="material-symbols-outlined mr-2 text-sm">event</span>
+<span class="font-label-caps text-label-caps">NEXT START DATE</span>
+</div>
+<p class="font-bold text-on-surface">September 15, 2024</p>
+</div>
+<div class="border-t border-slate-50 pt-6">
+<div class="flex items-center text-secondary mb-2">
+<span class="material-symbols-outlined mr-2 text-sm">language</span>
+<span class="font-label-caps text-label-caps">LOCATION</span>
+</div>
+<p class="font-bold text-on-surface">Online / Hybrid (SF &amp; NY)</p>
+</div>
+<div class="border-t border-slate-50 pt-6">
+<div class="flex items-center text-secondary mb-2">
+<span class="material-symbols-outlined mr-2 text-sm">school</span>
+<span class="font-label-caps text-label-caps">CREDENTIAL</span>
+</div>
+<p class="font-bold text-on-surface">Professional Certification</p>
+</div>
+<button class="w-full bg-cyan-600 text-white py-4 rounded-lg font-bold text-body-md hover:bg-cyan-700 transition-colors shadow-sm">
+                            Apply Now
+                        </button>
+<p class="text-center text-slate-400 text-xs">Applications close Sept 1st</p>
+</div>
+</div>
+<!-- Tech Stack Card -->
+<div class="bg-white border border-slate-100 rounded-xl p-6">
+<h4 class="font-label-caps text-label-caps text-secondary mb-4">TECHNOLOGIES TAUGHT</h4>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 text-xs font-medium rounded">React</span>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 text-xs font-medium rounded">Node.js</span>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 text-xs font-medium rounded">PostgreSQL</span>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 text-xs font-medium rounded">Docker</span>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 text-xs font-medium rounded">TypeScript</span>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 text-xs font-medium rounded">AWS</span>
+<span class="bg-surface-container text-on-surface-variant px-3 py-1 text-xs font-medium rounded">GraphQL</span>
+</div>
+</div>
+<!-- Code Teaser -->
+<div class="rounded-xl overflow-hidden bg-slate-900 shadow-xl border border-slate-800">
+<div class="code-block-header px-4 py-2 flex items-center space-x-2">
+<div class="w-2.5 h-2.5 rounded-full bg-red-500" />
+<div class="w-2.5 h-2.5 rounded-full bg-amber-500" />
+<div class="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+<span class="text-slate-400 text-xs font-mono ml-4">server.js</span>
+</div>
+<div class="p-4 font-code text-code overflow-x-auto">
+<pre class="text-slate-300"><code><span class="text-cyan-400">const</span> express = require(<span class="text-amber-300">'express'</span>);
+<span class="text-cyan-400">const</span> app = express();
+
+app.get(<span class="text-amber-300">'/'</span>, (req, res) =&gt; {'{'}
+  res.json({ status:  });
+{'}'});
+
+<span class="text-slate-500">// Join 1000+ developers</span>
+app.listen(3000);</code></pre>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 full-width py-12 font-['Space_Grotesk'] text-sm">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="space-y-4">
+<div class="text-lg font-bold text-slate-900 dark:text-white">ITI Global</div>
+<p class="text-slate-500 dark:text-slate-400 leading-relaxed">
+                    Building the future of computing through rigorous education and technological excellence.
+                </p>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 dark:text-white mb-4">Admissions</h5>
+<ul class="space-y-2">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-cyan-500 underline transition-all" href="#">Enrollment Guide</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-cyan-500 underline transition-all" href="#">Financial Aid</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-cyan-500 underline transition-all" href="#">Accreditation</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 dark:text-white mb-4">Legal</h5>
+<ul class="space-y-2">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-cyan-500 underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-cyan-500 underline transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-cyan-500 underline transition-all" href="#">Cookie Settings</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 dark:text-white mb-4">Connect</h5>
+<button class="bg-cyan-600 text-white w-full py-2 rounded-md font-medium mb-4 active:scale-95 transition-all">Newsletter Signup</button>
+<div class="flex space-x-4">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-cyan-600">brand_awareness</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-cyan-600">alternate_email</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-cyan-600">hub</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center text-slate-500 dark:text-slate-400">
+<div>© 2024 Information Technology Institute. Advancing the future of computing.</div>
+<div class="mt-4 md:mt-0 flex space-x-6">
+<span>Made with Code</span>
+<span>v4.2.0</span>
+</div>
+</div>
+</footer>
+</body></html>

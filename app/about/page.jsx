@@ -77,7 +77,7 @@ export default function AboutPage() {
           {[
             { year: '1998', title: 'Founding', desc: 'ITI Global was established with a focus on core software engineering and database management systems.' },
             { year: '2005', title: 'Global Expansion', desc: 'Launched the International Exchange Program, partnering with 15 leading universities across Europe and Asia.' },
-            { year: '2018', title: 'AI Research Wing', desc: 'Inaugurated the Advanced Intelligence Center, a $50M facility dedicated to machine learning and robotics.' },
+            { year: '2018', title: 'AI Research Wing', desc: 'Inaugurated the Advanced Intelligence Center, a facility dedicated to machine learning and robotics.' },
           ].map((item) => (
             <div key={item.year} className="flex gap-4 md:gap-6">
               <div className="flex flex-col items-center">
@@ -117,15 +117,15 @@ export default function AboutPage() {
           <div className="md:col-span-1 relative group overflow-hidden rounded-xl h-[180px] md:h-full">
             <Image src="/assets/d1325f38b1a8c15eb1bb0e0ccc29c297.png" alt="Innovation Lounge" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
             <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent text-white">
-              <h4 className="text-sm font-semibold">Innovation Lounge</h4>
+              <h4 className="text-sm font-semibold">Smart Classrooms</h4>
             </div>
           </div>
-          <div className="md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-xl h-[180px] md:h-full">
+          {/* <div className="md:col-span-1 md:row-span-2 relative group overflow-hidden rounded-xl h-[180px] md:h-full">
             <Image src="/assets/d018f1c1549fc3ffbd3671aa7509d914.png" alt="The Great Library" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
             <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent text-white">
-              <h4 className="text-sm font-semibold">The Great Library</h4>
+              <h4 className="text-sm font-semibold"></h4>
             </div>
-          </div>
+          </div> */}
           <div className="md:col-span-1 relative group overflow-hidden rounded-xl h-[180px] md:h-full">
             <Image src="/assets/b9445e475dd06dd0b321f6c1059b631b.png" alt="Active Learning Rooms" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
             <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/70 to-transparent text-white">

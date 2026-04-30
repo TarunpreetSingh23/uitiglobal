@@ -31,7 +31,9 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col bg-surface text-on-surface font-body-md">
         <CustomCursor />
         <Navbar />
-        {children}
+        <main className="flex-grow  md:pt-0">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

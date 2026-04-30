@@ -6,6 +6,7 @@ import CourseCard from './components/CourseCard';
 import HeroCarousel from './components/HeroCarousel';
 import PartnersSection from './components/PartnersSection';
 import NewsletterSection from './components/NewsletterSection';
+import DemoBanner from './components/DemoBanner';
 
 export const metadata = {
   title: 'ITI Global — Advancing the Future of IT',
@@ -203,6 +204,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Demo Class Banner ── */}
+      <DemoBanner />
 
       {/* ── Testimonials ── */}
       <section className="bg-white py-16 md:py-20">

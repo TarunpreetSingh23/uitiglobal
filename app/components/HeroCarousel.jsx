@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import CourseApplyModal from './CourseApplyModal';
 
 const slides = [
   {
@@ -12,7 +13,7 @@ const slides = [
     titleAccent: 'Future of IT',
     subtitle: 'Empowering the next generation of technology leaders through world-class training, industrial partnerships, and innovative computing research.',
     cta: { label: 'Explore Programs', href: '/courses' },
-    ctaSecondary: { label: 'About Us', href: '/about' },
+    ctaSecondary: { label: 'Book a Free Demo', href: '#' },
     image: '/assets/f75c2308de23c422c26dc222cf22584e.png',
     stats: [
       { value: '500+', label: 'Students' },
@@ -30,7 +31,7 @@ const slides = [
     titleAccent: 'for the Real World',
     subtitle: 'Dive deep into predictive modeling, neural networks, and the critical ethical frameworks of automated decision systems that power tomorrow.',
     cta: { label: 'View ML Programs', href: '/courses' },
-    ctaSecondary: { label: 'Learn More', href: '/about' },
+    ctaSecondary: { label: 'Book a Free Demo', href: '#' },
     image: '/assets/940e06dfe14e8611b57bf89a101b66d6.png',
     stats: [
       { value: '200+', label: 'Enrolled' },
@@ -53,6 +54,9 @@ export default function HeroCarousel() {
   const [progress, setProgress] = useState(0);
   const progressRef = useRef(null);
   const startTimeRef = useRef(null);
+
+  // Modal State
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const goTo = useCallback((idx, dir = 1) => {
     if (transitioning || idx === current) return;
@@ -78,7 +82,7 @@ export default function HeroCarousel() {
 
   // Auto-advance with smooth progress bar
   useEffect(() => {
-    if (paused) return;
+    if (paused || isModalOpen) return;
     let frame;
     const tick = (timestamp) => {
       if (!startTimeRef.current) startTimeRef.current = timestamp;
@@ -93,7 +97,7 @@ export default function HeroCarousel() {
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [current, paused, next]);
+  }, [current, paused, next, isModalOpen]);
 
   const slide = slides[current];
 
@@ -137,7 +141,7 @@ export default function HeroCarousel() {
           {/* Tag pill */}
           {/* <div
             key={`tag-${current}`}
-            className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border text-xs font-bold tracking-widest uppercase"
+            className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border text-[10px] font-bold tracking-widest uppercase"
             style={{
               borderColor: `${slide.accentColor}40`,
               background: `${slide.accentColor}15`,
@@ -190,12 +194,13 @@ export default function HeroCarousel() {
               {slide.cta.label}
               <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </Link>
-            {/* <Link
-              href={slide.ctaSecondary.href}
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-bold text-sm text-slate-300 border border-white/15 hover:border-white/30 hover:text-white hover:bg-white/5 transition-all duration-300"
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-bold text-sm text-slate-300 border border-white/15 hover:border-white/30 hover:text-white hover:bg-white/5 transition-all duration-300 active:scale-[0.97]"
             >
+              <span className="material-symbols-outlined text-[18px] text-cyan-400">calendar_today</span>
               {slide.ctaSecondary.label}
-            </Link> */}
+            </button>
           </div>
 
           {/* Stats row */}
@@ -339,6 +344,14 @@ export default function HeroCarousel() {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      <CourseApplyModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        courseName="General Demo Class"
+        courseId="demo-class"
+      />
 
       {/* Keyframe definitions */}
       <style>{`

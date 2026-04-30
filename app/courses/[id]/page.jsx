@@ -47,7 +47,7 @@ export default async function CourseDetailPage({ params }) {
                 courseName={course.title}
                 className="bg-cyan-600 text-white px-8 py-4 font-bold text-base rounded-lg flex items-center shadow-sm hover:shadow-md transition-all active:scale-95"
               >
-                Enroll Now
+                Book a Demo Class
                 <span className="material-symbols-outlined ml-2">arrow_forward</span>
               </ApplyButton>
               {/* <button className="border border-black text-black px-8 py-4 font-bold text-base rounded-lg hover:bg-[#f2f4f6] transition-all active:scale-95">

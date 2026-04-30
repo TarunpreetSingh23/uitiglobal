@@ -190,12 +190,12 @@ export default function HeroCarousel() {
               {slide.cta.label}
               <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </Link>
-            <Link
+            {/* <Link
               href={slide.ctaSecondary.href}
               className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-bold text-sm text-slate-300 border border-white/15 hover:border-white/30 hover:text-white hover:bg-white/5 transition-all duration-300"
             >
               {slide.ctaSecondary.label}
-            </Link>
+            </Link> */}
           </div>
 
           {/* Stats row */}

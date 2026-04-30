@@ -97,7 +97,7 @@ export default function CustomCursor() {
           backgroundColor: '#0891b2',
           borderRadius: '50%',
           pointerEvents: 'none',
-          zIndex: 9999,
+          zIndex: 99999,
           opacity: isVisible ? 1 : 0,
           // Only animate size/opacity — transform is set frame-by-frame via JS
           transition: 'width 150ms ease, height 150ms ease, opacity 300ms ease',

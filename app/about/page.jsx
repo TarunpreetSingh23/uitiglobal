@@ -140,14 +140,14 @@ export default function AboutPage() {
         <h2 className="text-3xl md:text-4xl font-semibold text-black mb-10 md:mb-12 text-center md:text-left">Leadership Team</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
           {[
-            { role: 'Dean of ITI Global', name: 'Dr. Marcus Thorne', img: '/assets/681b2067a4a17bf9d6f5dd4cebd11c0f.png', bio: 'With over 25 years in computational theory and a PhD from Stanford, Dr. Thorne leads the institute with a focus on ethical AI and global connectivity.' },
-            { role: 'Head of Computer Science', name: 'Prof. Elena Rodriguez', img: '/assets/783a1f025ba759a75e3c9c5944f7b3b9.png', bio: 'A pioneer in distributed systems and cloud architecture, Prof. Rodriguez oversees the undergraduate and graduate CS curricula.' },
+            { role: 'Director of ITI Global', name: 'Harinder Singh Sandhu', img: '/assets/681b2067a4a17bf9d6f5dd4cebd11c0f.png', bio: 'With over 25 years in computational theory and a PhD from Stanford, Dr. Thorne leads the institute with a focus on ethical AI and global connectivity.' },
+            { role: 'supervisor', name: 'Sandeep Singh', img: '/assets/783a1f025ba759a75e3c9c5944f7b3b9.png', bio: 'A pioneer in distributed systems and cloud architecture, Prof. Rodriguez oversees the undergraduate and graduate CS curricula.' },
             { role: 'Head of Cybersecurity', name: 'Dr. Julian Vance', img: '/assets/242e4703ebae0f66c553dfb3c21b6084.png', bio: 'Former lead security architect for global tech firms, Dr. Vance brings real-world threat intelligence to the academic sphere.' },
           ].map((person) => (
             <div key={person.name} className="flex flex-col">
-              <div className="aspect-[3/4] bg-[#eceef0] mb-4 md:mb-6 overflow-hidden rounded-lg grayscale hover:grayscale-0 transition-all duration-300 relative">
+              {/* <div className="aspect-[3/4] bg-[#eceef0] mb-4 md:mb-6 overflow-hidden rounded-lg grayscale hover:grayscale-0 transition-all duration-300 relative">
                 <Image src={person.img} alt={person.name} fill className="w-full h-full object-cover" />
-              </div>
+              </div> */}
               <span className="text-[10px] md:text-xs font-semibold tracking-widest uppercase text-cyan-600 mb-1">{person.role}</span>
               <h3 className="text-xl md:text-2xl font-semibold text-black mb-2 md:mb-3">{person.name}</h3>
               <p className="text-xs md:text-sm text-[#505f76] leading-relaxed">{person.bio}</p>

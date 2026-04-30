@@ -135,7 +135,7 @@ export default function HeroCarousel() {
         <div className="flex-1 w-full text-center lg:text-left">
 
           {/* Tag pill */}
-          <div
+          {/* <div
             key={`tag-${current}`}
             className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border text-xs font-bold tracking-widest uppercase"
             style={{
@@ -147,7 +147,7 @@ export default function HeroCarousel() {
           >
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: slide.accentColor }} />
             {slide.badge}
-          </div>
+          </div> */}
 
           {/* Headline */}
           <div key={`title-${current}`} style={{ animation: 'heroFadeUp 0.65s 0.05s cubic-bezier(0.22,1,0.36,1) both' }}>

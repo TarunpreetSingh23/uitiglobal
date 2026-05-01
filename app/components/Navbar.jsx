@@ -50,7 +50,7 @@ export default function Navbar() {
             <span className="text-white font-bold text-sm">I</span>
           </div>
           <span className="text-xl font-bold tracking-tight text-slate-900">
-            ITI <span className="text-cyan-600">Global</span>
+            Universal <span className="text-cyan-600">Institute</span>
           </span>
         </Link>
 

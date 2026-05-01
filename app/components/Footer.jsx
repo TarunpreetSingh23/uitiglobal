@@ -39,7 +39,7 @@ export default function Footer() {
                 <span className="text-white font-bold text-sm">I</span>
               </div>
               <span className="text-xl font-bold tracking-tight text-white">
-                ITI <span className="text-cyan-500">Global</span>
+                Universal <span className="text-cyan-500">Institute</span>
               </span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed w-full">
@@ -54,7 +54,7 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <span>Universal ITI, Block 5, Near Main Road,<br />,Amritsar – 75300</span>
+                <span>Universal Institute, Block 5, Near Main Road,<br />,Amritsar – 75300</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-cyan-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -123,7 +123,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
-          <span>© {new Date().getFullYear()} Universal ITI Global. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Universal Institute Global. All rights reserved.</span>
           <span className="text-slate-600">Advancing the Future of Computing</span>
         </div>
       </div>

@@ -9,7 +9,7 @@ import NewsletterSection from './components/NewsletterSection';
 import DemoBanner from './components/DemoBanner';
 
 export const metadata = {
-  title: 'ITI Global — Advancing the Future of IT',
+  title: 'Universal Institute — Advancing the Future of IT',
   description: 'Empowering the next generation of technology leaders through world-class training, industrial partnerships, and innovative computing research.',
 };
 
@@ -32,7 +32,7 @@ const advantages = [
 
 const testimonials = [
   {
-    quote: 'ITI Global transformed my career. Within 6 months of graduating, I landed a senior engineering role at a Fortune 500 company.',
+    quote: 'Universal Institute transformed my career. Within 6 months of graduating, I landed a senior engineering role at a Fortune 500 company.',
     name: 'Aditya Sharma',
     role: 'Full-Stack Engineer — Class of 2024',
     initials: 'AS',
@@ -81,13 +81,13 @@ export default async function HomePage() {
               <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-[80px] pointer-events-none" />
 
               <div className="relative z-10">
-                <span className="inline-block text-xs font-bold tracking-widest uppercase text-cyan-400 mb-4 px-3 py-1 bg-cyan-400/10 rounded-full border border-cyan-400/20">About ITI Global</span>
+                <span className="inline-block text-xs font-bold tracking-widest uppercase text-cyan-400 mb-4 px-3 py-1 bg-cyan-400/10 rounded-full border border-cyan-400/20">About Universal Institute</span>
                 <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-white mb-5">
                   A Tradition of Innovation<br />
                   <span className="text-cyan-400">and Academic Excellence</span>
                 </h2>
                 <p className="text-slate-400 leading-relaxed text-base max-w-2xl">
-                  For over two decades, Universal ITI has served as a beacon for technical education in Amritsar. We bridge the gap between academic theory and industrial practice, ensuring our graduates are not just market-ready — but are pioneering its growth.
+                  For over two decades, Universal Institute has served as a beacon for technical education in Amritsar. We bridge the gap between academic theory and industrial practice, ensuring our graduates are not just market-ready — but are pioneering its growth.
                 </p>
                 <Link
                   href="/about"
@@ -180,7 +180,7 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-5 md:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs font-bold tracking-widest uppercase text-cyan-400 mb-3 block">Why Choose Us</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white">The ITI Advantage</h2>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white">The Advantage</h2>
             <p className="text-slate-400 mt-3 text-base">More than education — a complete ecosystem for professional growth.</p>
           </div>
 

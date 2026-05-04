@@ -143,7 +143,7 @@ export default async function CourseDetailPage({ params }) {
               {[
                 { icon: 'schedule', label: 'DURATION', value: course.duration },
                 { icon: 'event', label: 'NEXT START DATE', value: course.nextStartDate || 'September 15, 2026' },
-                { icon: 'language', label: 'LOCATION', value: course.location || 'Online / Hybrid' },
+                { icon: 'language', label: 'MODE OF LEARNING', value: course.location || 'Online / Hybrid' },
                 { icon: 'school', label: 'CREDENTIAL', value: course.credential || 'Professional Certification' },
               ].map((item, i) => (
                 <div key={item.label} className={i > 0 ? 'border-t border-slate-50 pt-6' : ''}>

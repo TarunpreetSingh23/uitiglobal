@@ -105,7 +105,7 @@ export default async function CourseDetailPage({ params }) {
           )}
 
           {/* Prerequisites */}
-          <section>
+          {/* <section>
             <h2 className="text-2xl md:text-3xl font-semibold mb-6">Prerequisites</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-start p-4 bg-white border border-slate-100 rounded-lg">
@@ -123,7 +123,7 @@ export default async function CourseDetailPage({ params }) {
                 </div>
               </div>
             </div>
-          </section>
+          </section> */}
         </div>
 
         {/* Sidebar */}

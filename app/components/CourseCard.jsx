@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import ApplyButton from './ApplyButton';
 
-export default function CourseCard({ course }) {
+export default function CourseCard({ course, isIti = false }) {
   return (
     <div className="group bg-white border border-slate-100 rounded-xl overflow-hidden hover:shadow-lg hover:border-cyan-200 transition-all duration-300">
       <div className="h-48 overflow-hidden relative">
@@ -24,13 +25,24 @@ export default function CourseCard({ course }) {
             <span className="material-symbols-outlined text-[18px]">schedule</span>
             <span className="text-sm font-medium">{course.duration}</span>
           </div>
-          <Link
-            href={`/courses/${course._id}`}
-            className="text-[#0090a9] text-xs font-semibold tracking-widest uppercase flex items-center gap-1 group/btn transition-all"
-          >
-            View Details
-            <span className="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
-          </Link>
+          {isIti ? (
+            <ApplyButton 
+              courseId={course._id?.toString()} 
+              courseName={course.title}
+              className="text-[#0090a9] text-xs font-semibold tracking-widest uppercase flex items-center gap-1 group/btn transition-all bg-transparent p-0 m-0 border-none hover:text-cyan-600"
+            >
+              Enroll Now
+              <span className="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+            </ApplyButton>
+          ) : (
+            <Link
+              href={`/courses/${course._id}`}
+              className="text-[#0090a9] text-xs font-semibold tracking-widest uppercase flex items-center gap-1 group/btn transition-all"
+            >
+              View Details
+              <span className="material-symbols-outlined text-[16px] group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+            </Link>
+          )}
         </div>
       </div>
     </div>

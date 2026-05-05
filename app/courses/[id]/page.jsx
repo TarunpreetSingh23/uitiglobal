@@ -83,7 +83,7 @@ export default async function CourseDetailPage({ params }) {
           </section>
 
           {/* Instructor */}
-          {course.instructor && (
+          {course.instructo && (
             <section className="bg-[#f2f4f6] rounded-xl p-6 md:p-12 border border-slate-100">
               <h2 className="text-3xl font-semibold mb-8">Lead Instructor</h2>
               <div className="flex flex-col md:flex-row items-center md:items-start gap-8">

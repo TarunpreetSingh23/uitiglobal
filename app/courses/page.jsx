@@ -4,7 +4,7 @@ import CourseCard from '../components/CourseCard';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'ITI Global | Academic Catalog',
+  title: 'Universal Institute | Academic Catalog',
   description: 'Explore our elite selection of specialized programs designed for the next generation of computing leaders.',
 };
 
@@ -28,6 +28,8 @@ async function getCourses({ searchQuery = '', category = '' }) {
     // Category filter (skip if "All Courses" or empty)
     if (category && category !== 'All Courses') {
       conditions.push({ category: { $regex: category, $options: 'i' } });
+    } else {
+      conditions.push({ category: { $not: /ITI courses/i } });
     }
 
     const query = conditions.length > 0 ? { $and: conditions } : {};

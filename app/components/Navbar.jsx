@@ -8,6 +8,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/courses', label: 'Courses' },
+  { href: '/iti-courses', label: 'ITI Courses' },
   { href: '/contact', label: 'Contact' },
 ];
 

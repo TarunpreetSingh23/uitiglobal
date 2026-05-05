@@ -133,7 +133,7 @@ export default async function CourseDetailPage({ params }) {
             <div className="bg-[#131b2e] p-6">
               <h4 className="text-white text-xs font-semibold tracking-widest uppercase opacity-70 mb-1">PROGRAM TUITION</h4>
               <div className="flex items-baseline space-x-2">
-                <span className="text-white text-4xl font-semibold">{course.tuition || '$12,500'}</span>
+                <span className="text-white text-4xl font-semibold">{course.tuition || ''}</span>
                 {course.originalTuition && (
                   <span className="text-slate-400 text-sm line-through">{course.originalTuition}</span>
                 )}

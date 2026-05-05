@@ -89,8 +89,9 @@ export default function ContactPage() {
               <h3 className="text-xl font-bold text-slate-900 mb-2">Visit Us</h3>
               <p className="text-slate-600 leading-relaxed">
                 Universal Institute<br />
+                Guru Arjan Dev Nagar<br />
                 Amritsar,Punjab<br />
-                143001, India
+                143002
               </p>
             </div>
 

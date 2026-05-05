@@ -18,7 +18,7 @@ const slides = [
     stats: [
       { value: '500+', label: 'Students' },
       { value: '7+', label: 'Courses' },
-      { value: '20+', label: 'Years Exp.' },
+      { value: '15+', label: 'Years Exp.' },
     ],
     accentColor: '#0891b2',
     gradientFrom: 'rgba(8,145,178,0.12)',
@@ -36,7 +36,7 @@ const slides = [
     stats: [
       { value: '200+', label: 'Enrolled' },
       { value: '15+', label: 'Modules' },
-      { value: '100%', label: 'Placement' },
+       { value: '15+', label: 'Years Exp.' },
     ],
     accentColor: '#7c3aed',
     gradientFrom: 'rgba(124,58,237,0.10)',

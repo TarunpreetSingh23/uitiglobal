@@ -8,7 +8,7 @@ const stats = [
 ];
 
 const partners = [
-  { name: 'PMKVY', img: '/assets/pmkvy.png', alt: 'Pradhan Mantri Kaushal Vikas Yojana' },
+  { name: 'PMKVY', img: '/assets/Pmkvy.png', alt: 'Pradhan Mantri Kaushal Vikas Yojana' },
   { name: 'NSDC', img: '/assets/nsdc.png', alt: 'National Skill Development Corporation' },
   { name: 'NULM', img: '/assets/partner_nulm.png', alt: 'National Urban Livelihoods Mission' },
   { name: 'RSLDC', img: '/assets/partner_rsldc.png', alt: 'Rajasthan Skill and Livelihoods Development Corporation' },

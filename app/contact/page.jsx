@@ -100,8 +100,8 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">Email Us</h3>
               <p className="text-slate-600 leading-relaxed">
-                Admissions: admissions@uiti.edu<br />
-                Support: support@uiti.edu
+              
+                Support: info@uniinstitute.in
               </p>
             </div>
 

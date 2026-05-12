@@ -31,8 +31,11 @@ export async function POST(request) {
 
     // Configure Nodemailer
     try {
+      // Use SMTP_HOST if provided (e.g. for GoDaddy/Office365), else fallback to gmail
       const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: process.env.SMTP_HOST || undefined,
+        port: process.env.SMTP_PORT || undefined,
+        service: process.env.SMTP_HOST ? undefined : 'gmail',
         auth: {
           user: process.env.EMAIL_USER,
           pass: process.env.EMAIL_PASS,
@@ -41,7 +44,7 @@ export async function POST(request) {
 
       const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: 'tarunpreets29@gmail.com',
+        to: process.env.RECEIVER_EMAIL || 'info@uniinstitute.in',
         subject: `New Application: ${courseName} - ${name}`,
         html: `
           <h3>New Course Application Received</h3>

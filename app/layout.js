@@ -15,8 +15,20 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "ITI Global - Advanced Education",
-  description: "Academic Catalog for ITI Global",
+  title: "Universal Institute | Advanced IT Education & Training",
+  description: "Universal Institute offers world-class IT education, professional training, and industry-ready courses to advance your career in computing and technology.",
+  keywords: ["IT courses", "computer education", "universal institute", "ITI global", "programming courses", "tech training", "amritsar institute"],
+  openGraph: {
+    title: "Universal Institute | Advanced IT Education",
+    description: "Join Universal Institute for world-class IT education and professional training.",
+    url: "https://www.uniinstitute.in",
+    siteName: "Universal Institute",
+    locale: "en_IN",
+    type: "website",
+  },
+  verification: {
+    google: "yjkYDYS58EcGNeQ8I7A8VYDBaLBKPhPmm-53lTIZUK4",
+  },
 };
 
 export default function RootLayout({ children }) {

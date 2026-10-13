@@ -7,66 +7,85 @@ export default function DemoBanner() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="py-12 md:py-20 px-5 md:px-8">
+    <section className="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-slate-50 font-['Space_Grotesk']">
       <div className="max-w-7xl mx-auto">
-        <div className="relative bg-[#0a0f1e] rounded-[32px] overflow-hidden group">
-          {/* Background effects */}
-          <div className="absolute inset-0 opacity-[0.05]"
-            style={{
-              backgroundImage: 'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)',
-              backgroundSize: '40px 40px',
-            }} />
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-cyan-500/20 rounded-full blur-[100px] pointer-events-none group-hover:bg-cyan-500/30 transition-colors duration-700" />
-          <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="bg-white rounded-2xl border border-slate-200 p-8 sm:p-12 shadow-sm relative overflow-hidden">
+          {/* Subtle accent border at top */}
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-cyan-600 via-cyan-700 to-slate-800" />
 
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10 p-8 md:p-16">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="max-w-2xl text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-cyan-500/10 border border-cyan-500/20 rounded-full mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-                <span className="text-[10px] md:text-xs font-bold text-cyan-400 uppercase tracking-widest">Limited Slots Available</span>
-              </div>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-[1.1] mb-6">
-                Experience the Future of IT<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200">Book a Free Demo Class Today!</span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-cyan-50 border border-cyan-200 rounded-full text-xs font-semibold text-cyan-800 uppercase tracking-wider mb-4">
+                <span className="w-2 h-2 rounded-full bg-cyan-600 animate-pulse" />
+                Free Counseling & Demo Session
+              </span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight leading-tight mb-4">
+                Attend a Free Demo Class in Amritsar
               </h2>
-              <p className="text-slate-400 text-base md:text-lg leading-relaxed mb-8">
-                Not sure where to start? Join our interactive demo session to explore our labs, meet our experts, and discover which career path fits you best. No commitment required.
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                Meet our mentors, experience our computer laboratories, and understand the practical curriculum before enrolling. We provide transparent course guidance tailored to your career goals.
               </p>
+
+              {/* Highlights */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 text-xs sm:text-sm text-slate-700">
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-cyan-700 text-[18px]">check_circle</span>
+                  <span>1-on-1 Guidance with Technical Mentors</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-cyan-700 text-[18px]">check_circle</span>
+                  <span>Review Syllabus & Practical Lab Projects</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-cyan-700 text-[18px]">check_circle</span>
+                  <span>No Obligation or Hidden Charges</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-cyan-700 text-[18px]">check_circle</span>
+                  <span>Near Khalsa College for Women Campus</span>
+                </div>
+              </div>
+
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#0a0f1e] rounded-2xl font-extrabold text-base hover:bg-cyan-50 transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl shadow-black/20"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-cyan-700 hover:bg-cyan-800 active:scale-98 text-white rounded-xl font-bold text-sm transition-all shadow-sm"
                 >
-                  <span className="material-symbols-outlined">calendar_month</span>
-                  Reserve Your Spot
+                  <span className="material-symbols-outlined text-[18px]">calendar_month</span>
+                  Book a Free Demo Session
                 </button>
-                <div className="flex -space-x-3">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0a0f1e] bg-slate-800 overflow-hidden">
-                      <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="user" className="w-full h-full object-cover" />
-                    </div>
-                  ))}
-                  {/* <div className="w-10 h-10 rounded-full border-2 border-[#0a0f1e] bg-cyan-600 flex items-center justify-center text-[10px] font-bold text-white">
-                    +12k
-                  </div> */}
-                </div>
-                {/* <p className="text-xs text-slate-500 font-medium ml-2">Join 12,000+ certified alumni</p> */}
+                <a
+                  href="tel:+919815039888"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-xl font-semibold text-sm transition-colors"
+                >
+                  <span className="material-symbols-outlined text-[18px] text-cyan-700">call</span>
+                  Call +91 9815039888
+                </a>
               </div>
             </div>
 
-            {/* Illustration / Decorative Card */}
-            <div className="relative w-full max-w-[400px] lg:max-w-none lg:flex-1 h-[280px] lg:h-[400px]">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-3xl backdrop-blur-3xl border border-white/10 flex flex-col items-center justify-center text-center p-8">
-                <div className="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center mb-6 animate-bounce">
-                  <span className="material-symbols-outlined text-4xl text-white">event_available</span>
+            {/* Quick Campus Snapshot Card */}
+            <div className="w-full lg:w-80 bg-slate-50 border border-slate-200 rounded-xl p-6 text-center lg:text-left shrink-0">
+              <div className="w-10 h-10 rounded-lg bg-cyan-100 text-cyan-800 flex items-center justify-center mb-3 mx-auto lg:mx-0">
+                <span className="material-symbols-outlined text-[22px]">location_on</span>
+              </div>
+              <h3 className="font-bold text-slate-900 text-sm mb-1">Universal Institute Campus</h3>
+              <p className="text-xs text-slate-600 mb-4 leading-relaxed">
+                Guru Arjan Dev Nagar, Near Khalsa College for Women, Amritsar, Punjab – 143002
+              </p>
+              <div className="text-xs text-slate-500 pt-3 border-t border-slate-200 space-y-1.5">
+                <div className="flex justify-between">
+                  <span>Class Timings:</span>
+                  <span className="font-medium text-slate-700">9:00 AM – 6:00 PM</span>
                 </div>
-                <div className="space-y-4">
-                  <div className="h-2 w-48 bg-white/10 rounded-full mx-auto" />
-                  <div className="h-2 w-32 bg-white/10 rounded-full mx-auto" />
-                  <div className="h-2 w-40 bg-white/10 rounded-full mx-auto" />
+                <div className="flex justify-between">
+                  <span>Mode:</span>
+                  <span className="font-medium text-slate-700">Classroom & Labs</span>
                 </div>
-                <div className="absolute top-8 right-8 w-12 h-12 bg-cyan-500 rounded-full blur-xl animate-pulse" />
-                <div className="absolute bottom-8 left-8 w-16 h-16 bg-purple-500 rounded-full blur-2xl animate-pulse" />
+                <div className="flex justify-between">
+                  <span>Admissions:</span>
+                  <span className="font-medium text-emerald-600">Open for New Batches</span>
+                </div>
               </div>
             </div>
           </div>
@@ -76,8 +95,8 @@ export default function DemoBanner() {
       <CourseApplyModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        courseName="General Demo Class"
-        courseId="demo-class-banner"
+        courseName="Free Demo Session"
+        courseId="free-demo-session"
       />
     </section>
   );

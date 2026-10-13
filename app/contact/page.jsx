@@ -67,8 +67,8 @@ export default function ContactPage() {
         </div>
         
         <div className="relative max-w-7xl mx-auto px-6 text-center z-10">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
-            Get in <span className="text-cyan-400">Touch</span>
+          <h1 className="text-cyan-400  md:text-6xl font-extrabold mb-6 tracking-tight">
+           <span className="text-cyan-400"> Get in Touch</span>
           </h1>
           <p className="text-lg md:text-xl text-cyan-50 max-w-2xl mx-auto">
             Have questions about our programs, admissions, or anything else? Our team is here to help you start your journey.
@@ -89,8 +89,8 @@ export default function ContactPage() {
               <h3 className="text-xl font-bold text-slate-900 mb-2">Visit Us</h3>
               <p className="text-slate-600 leading-relaxed">
                 Universal Institute<br />
-                Amritsar,Punjab<br />
-                143001, India
+                Near Khalsa College for Women, opposite Khalsa College, GT Road, Amritsar, Punjab 143001
+               
               </p>
             </div>
 
@@ -111,8 +111,8 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">Call Us</h3>
               <p className="text-slate-600 leading-relaxed">
-                Toll Free: 1800-123-4567<br />
-                Direct: +91 98765 43210
+             
+                Direct: +91 9815039888
               </p>
             </div>
           </div>
@@ -187,7 +187,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-colors"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 9815039888"
                       />
                     </div>
                     <div>
@@ -204,7 +204,8 @@ export default function ContactPage() {
                         <option value="Admissions">Admissions</option>
                         <option value="Course Information">Course Information</option>
                         <option value="Technical Support">Technical Support</option>
-                        <option value="Partnership">Partnership</option>
+                       
+                        <option value="Industrial Training">Industrial Training</option>
                         <option value="Other">Other</option>
                       </select>
                     </div>

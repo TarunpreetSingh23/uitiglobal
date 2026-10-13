@@ -23,24 +23,54 @@ export default function AboutPage() {
             </p>
           </div>
           {/* Google Maps Embed */}
-          <div className="relative h-[320px] md:h-[460px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 group">
-            {/* Overlay bar with location badge */}
-            <div className="absolute top-4 left-4 z-10 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow text-sm font-medium text-slate-700 border border-slate-100">
-              <span className="material-symbols-outlined text-cyan-600" style={{ fontSize: '16px' }}>location_on</span>
-              Universal Institite, Amritsar, Punjab
-            </div>
-            <iframe
-              src="https://maps.google.com/maps?q=31.6301752,74.8407467&output=embed&z=17"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Universal ITI Amritsar Location"
-              className="w-full h-full"
-            />
-          </div>
+          
+{/* Google Maps Section */}
+<div className="space-y-4">
+  <div className="relative h-[320px] overflow-hidden rounded-2xl border border-slate-200 shadow-lg md:h-[460px]">
+    {/* Location Badge */}
+    <div className="absolute left-4 top-4 z-10 flex items-center gap-2 rounded-full border border-slate-100 bg-white/90 px-3 py-1.5 text-sm font-medium text-slate-700 shadow backdrop-blur-sm">
+      <span
+        className="material-symbols-outlined text-cyan-600"
+        style={{ fontSize: '16px' }}
+      >
+        location_on
+      </span>
+      Universal Institute, Amritsar, Punjab
+    </div>
+
+    {/* Google Maps Embed */}
+    <iframe
+      src="https://maps.google.com/maps?q=31.6301752,74.8407467&output=embed&z=17"
+      width="100%"
+      height="100%"
+      style={{ border: 0 }}
+      allowFullScreen
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      title="Universal ITI Amritsar Location"
+      className="h-full w-full"
+    />
+  </div>
+
+  {/* Get Directions Button */}
+  <div className="flex justify-center md:justify-start">
+    <Link
+      href="https://www.google.com/maps/dir//UNIVERSAL+INSTITUTE,+opposite+Khalsa+College+Road,+Guru+Arjun+Nagar,+Guru+Arjan+Dev+Nagar,+Amritsar,+Punjab+143002/@31.5961524,74.8857985,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x39196502beaecaf7:0x7272ca4337b22d1a!2m2!1d74.84081!2d31.6301327?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-cyan-800 hover:shadow-md"
+    >
+      <span className="material-symbols-outlined text-lg">
+        directions
+      </span>
+      Get Directions
+      <span className="material-symbols-outlined text-lg">
+        arrow_forward
+      </span>
+    </Link>
+  </div>
+</div>
+
         </div>
       </section>
 

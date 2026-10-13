@@ -2,87 +2,109 @@ import Link from 'next/link';
 
 const quickLinks = [
   { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/courses', label: 'Courses' },
-  { href: '/iti-courses', label: 'ITI Courses' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/courses', label: 'All Courses' },
+  { href: '/iti-courses', label: 'ITI Trades' },
+  { href: '/#industrial-training', label: 'Industrial Training' },
+  { href: '/gallery', label: 'Photo Gallery' },
+  { href: '/about', label: 'About Universal Institute' },
+  { href: '/contact', label: 'Contact Us' },
+  { href: '/verify-certificate', label: 'Verify Certificate' },
 ];
 
-function InstagramIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="2"/>
-      <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
-    </svg>
-  );
-}
-
-function FacebookIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-5 h-5">
-      <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  );
-}
+const technicalTracks = [
+  { href: '/courses', label: 'Full Stack Development with AI' },
+  { href: '/courses', label: 'AI Engineering' },
+  { href: '/courses', label: 'Data Analytics & Power BI' },
+  { href: '/courses', label: 'Web Development' },
+  { href: '/iti-courses', label: 'COPA (Computer Operator)' },
+  { href: '/iti-courses', label: 'Electrician & Technical Trades' },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300 font-['Space_Grotesk'] mt-auto">
-      {/* Main footer content */}
-      <div className="max-w-7xl mx-auto px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <footer className="bg-slate-900 text-slate-300 font-['Space_Grotesk'] mt-auto border-t border-slate-800">
+      {/* Institutional Credibility Strip */}
+      <div className="bg-slate-950/80 border-b border-slate-800/80 py-4 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-slate-400">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+            <span className="flex items-center gap-1.5 text-cyan-400 font-semibold">
+              <span className="material-symbols-outlined text-[16px]">verified</span>
+              Managed by Aagaz Society
+            </span>
+            <span className="text-slate-600 hidden sm:inline">•</span>
+            <span className="flex items-center gap-1.5 text-slate-300 font-medium">
+              <span className="material-symbols-outlined text-[16px] text-cyan-400">workspace_premium</span>
+              ISO 9001:2015 Certified
+            </span>
+            <span className="text-slate-600 hidden sm:inline">•</span>
+            <span>Vocational & Industrial Technical Education</span>
+          </div>
+          <Link
+            href="/verify-certificate"
+            className="inline-flex items-center gap-1.5 text-cyan-300 hover:text-white transition-colors bg-cyan-950/60 border border-cyan-800/60 px-3 py-1 rounded-full text-xs"
+          >
+            <span className="material-symbols-outlined text-[14px]">search</span>
+            Verify Issued Certificate Online
+          </Link>
+        </div>
+      </div>
 
-          {/* Brand + Address */}
-          <div className="space-y-5">
+      {/* Main footer content */}
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+          {/* Col 1: Institute Info */}
+          <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 group w-fit">
-              <div className="w-8 h-8 bg-cyan-600 rounded-lg flex items-center justify-center group-hover:bg-cyan-500 transition-colors duration-200">
-                <span className="text-white font-bold text-sm">I</span>
+              <div className="w-8 h-8 bg-[#007595] rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                UI
               </div>
               <span className="text-xl font-bold tracking-tight text-white">
-                Universal <span className="text-cyan-500">Institute</span>
+                Universal <span className="text-cyan-400">Institute</span>
               </span>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed w-full">
-              Advancing the future of computing through world-class IT education and training.
+            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Industrial Training and Vocational Institute in Amritsar, managed by <strong>Aagaz Society</strong>. Providing hands-on practical skills, live client projects, and career-oriented technical mentorship.
             </p>
-
-            {/* Address */}
-            <div className="space-y-2 text-sm text-slate-400">
-              <p className="text-slate-200 font-semibold uppercase tracking-widest text-xs mb-3">Our Address</p>
-              <div className="flex items-start gap-2">
-                <svg className="w-4 h-4 mt-0.5 text-cyan-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span>Universal Institute , Guru Arjan Dev Nagar<br />,Amritsar – 143002</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-cyan-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span>+91 9815039888</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-cyan-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span>info@uniinstitute.in</span>
-              </div>
+            <div className="pt-2 text-xs text-slate-400 space-y-1">
+              <p className="font-semibold text-slate-300">Certification & Standards:</p>
+              <p>ISO 9001:2015 Quality Management System for technical education and vocational training.</p>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Col 2: Training Programs */}
           <div>
-            <h4 className="text-white font-semibold uppercase tracking-widest text-xs mb-5">Quick Links</h4>
-            <ul className="space-y-3">
+            <h3 className="text-white font-semibold uppercase tracking-wider text-xs mb-4">
+              Training Programs
+            </h3>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              {technicalTracks.map((track, idx) => (
+                <li key={idx}>
+                  <Link
+                    href={track.href}
+                    className="text-slate-400 hover:text-cyan-300 transition-colors flex items-center gap-1.5"
+                  >
+                    <span className="w-1 h-1 rounded-full bg-cyan-500 shrink-0" />
+                    {track.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 3: Quick Navigation */}
+          <div>
+            <h3 className="text-white font-semibold uppercase tracking-wider text-xs mb-4">
+              Quick Links
+            </h3>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
               {quickLinks.map(({ href, label }) => (
                 <li key={href}>
                   <Link
                     href={href}
-                    className="flex items-center gap-2 text-slate-400 hover:text-cyan-400 transition-colors duration-200 text-sm group"
+                    className="text-slate-400 hover:text-cyan-300 transition-colors flex items-center gap-1.5"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-600 group-hover:bg-cyan-400 transition-colors duration-200 shrink-0" />
+                    <span className="w-1 h-1 rounded-full bg-cyan-500 shrink-0" />
                     {label}
                   </Link>
                 </li>
@@ -90,42 +112,57 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Social Media */}
-          <div>
-            <h4 className="text-white font-semibold uppercase tracking-widest text-xs mb-5">Follow Us</h4>
-            <p className="text-slate-400 text-sm mb-5 leading-relaxed">
-              Stay connected with us on social media for the latest updates, courses, and announcements.
-            </p>
-            <div className="flex gap-3">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow us on Instagram"
-                className="flex items-center justify-center w-10 h-10 rounded-xl bg-slate-800 text-slate-400 hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-pink-900/30"
-              >
-                <InstagramIcon />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow us on Facebook"
-                className="flex items-center justify-center w-10 h-10 rounded-xl bg-slate-800 text-slate-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-900/30"
-              >
-                <FacebookIcon />
-              </a>
+          {/* Col 4: Campus & Contact */}
+          <div className="space-y-3">
+            <h3 className="text-white font-semibold uppercase tracking-wider text-xs mb-4">
+              Campus & Contact
+            </h3>
+            <div className="space-y-3 text-xs sm:text-sm text-slate-400">
+              <div className="flex items-start gap-2.5">
+                <span className="material-symbols-outlined text-cyan-400 text-[18px] shrink-0 mt-0.5">location_on</span>
+                <span>
+                  Universal Institute<br />
+                  Guru Arjan Dev Nagar,<br />
+                  Opposite Khalsa College for Women,<br />
+                  Amritsar – 143002, Punjab, India
+                </span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <span className="material-symbols-outlined text-cyan-400 text-[18px] shrink-0">call</span>
+                <a href="tel:+919815039888" className="hover:text-cyan-300 transition-colors text-slate-200 font-medium">
+                  +91 9815039888
+                </a>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <span className="material-symbols-outlined text-cyan-400 text-[18px] shrink-0">mail</span>
+                <a href="mailto:info@uniinstitute.in" className="hover:text-cyan-300 transition-colors">
+                  info@uniinstitute.in
+                </a>
+              </div>
+              <div className="pt-2">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-cyan-700 hover:bg-cyan-600 px-3.5 py-2 rounded-lg transition-colors shadow-sm"
+                >
+                  <span className="material-symbols-outlined text-[15px]">send</span>
+                  Send Admission Enquiry
+                </Link>
+              </div>
             </div>
           </div>
 
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
-          <span>© {new Date().getFullYear()} Universal Institute Global. All rights reserved.</span>
-          <span className="text-slate-600">Advancing the Future of Computing</span>
+      {/* Bottom Legal / Copyright */}
+      <div className="border-t border-slate-800 bg-slate-950 py-4 px-6 text-xs text-slate-500">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+          <span>
+            © {new Date().getFullYear()} Universal Institute, Amritsar. Managed by Aagaz Society. All rights reserved.
+          </span>
+          <span className="text-slate-400">
+            ISO 9001:2015 Certified Institution
+          </span>
         </div>
       </div>
     </footer>
